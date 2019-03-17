@@ -2010,7 +2010,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   color: #222;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 15px;
   text-transform: uppercase;
   outline: none;
 }
@@ -2484,7 +2484,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .callto-action-area {
-  background: url(../img/callaction-bg.jpg) center;
+  background: url(../img/impression.png) center;
   background-size: cover;
 }
 
@@ -2912,6 +2912,7 @@ h6 {
 
 .footer-bottom {
   padding-top: 80px;
+  margin-bottom:-90px;
 }
 
 .footer-text a, .footer-text i {
