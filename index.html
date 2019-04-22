@@ -30,6 +30,9 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116374030-1"></script>
 	<script>
@@ -237,14 +240,14 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6 single-portfolio">
+				<!--div class="col-lg-6 single-portfolio">
 					<a href="http://ngo-hub.com"><img class="image img-fluid border-round" src="img/ngo-hub.png" alt="">
 					<!--a href="img/ngo-hub.png" class="img-pop-up">
 						<div class="middle">
 							<div class="text">
 								<span class="lnr lnr-frame-expand"></span>
 							</div>
-						</div-->
+						</div>
 					</a>
 				</div>
 				<div class="col-lg-6 single-portfolio">
@@ -254,7 +257,7 @@
 							<div class="text">
 								<span class="lnr lnr-frame-expand"></span>
 							</div>
-						</div-->
+						</div>
 					</a>
 				</div>
 				<div class="col-lg-6 single-portfolio">
@@ -264,7 +267,7 @@
 							<div class="text">
 								<span class="lnr lnr-frame-expand"></span>
 							</div>
-						</div-->
+						</div>
 					</a>
 				</div>
 				<div class="col-lg-6 single-portfolio">
@@ -275,7 +278,7 @@
 								<span class="lnr lnr-frame-expand"></span>
 							</div>
 						</div>
-					</a--></a>
+					</a></a>
 				</div>
 				<!--
 				<div class="col-lg-4 single-portfolio">
@@ -289,11 +292,40 @@
 					</a>
 				</div>
 				-->
-			</div>
+<div class="owl-carousel owl-theme">
+    <div class="item"><a class="trigger_ngohub"><img src="img/ngo-hub1.png"></a></div>
+    <div class="item"><a class="trigger_tictac"><img src="img/tictactoelogo.png"></a></div>
+
+</div>
+
+</div>
+			
 		</div>
 	</section>
 	<!-- End protfolio Area -->
-
+	<!--Popup div-->
+<div class="hover_bkgr_fricc" id="ngohub">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">X</div>
+        <img class="img-fluid" src="img/ngo-hub1.png">
+		<h2 align="center">NGOHUB</h2>
+		<p>A platform for NGOs, volunteers and users to make this world a better place.</p>
+		<button class="button" onclick="location.href='https://tictactoetwist.infroid.in/'" type="button">
+         <span>Go to website</span></button>
+    </div>
+</div>
+<div class="hover_bkgr_fricc" id="tictactoe">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">X</div>
+        <img class="img-fluid" src="img/tictactoelogo.png">
+		<h2 align="center">TicTacToe Twist</h2>
+		<p>Tic Tac Toe Twist is a classic tic tac toe game with a twist included which takes the game to a whole new level. Enjoy this game with your friends, family & kids. Play this classic game with a twist and Recall your childhood!</p>
+		<button class="button" onclick="location.href='https://tictactoetwist.infroid.in/'" type="button">
+         <span>Go to website</span></button>
+    </div>
+</div>
 	<!-- Start callto-action Area -->
 	<section class="callto-action-area relative section-gap">
 		<!--div class="overlay overlay-bg"></div-->
@@ -306,8 +338,8 @@
 						<a class="primary-btn" href="mailto:connect@infroid.in?Subject=Regarding%20Infroid">Reach Us</a>
 					</div>
 				</div>
-			</div>
-		</div>
+			</div></div>
+		
 	</section>
 	<!-- End calto-action Area -->
 
@@ -568,12 +600,51 @@
 			js = d.createElement(s); js.id = id;
 			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
 			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+		}(document, 'script', 'facebook-jssdk'));
+		
+
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:1,
+    loop:true,
+    margin:0,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true
+});
+
+
+
+		
+		</script>
+		
 
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat" attribution=setup_tool page_id="1174712475916737" theme_color="#df003a" logged_in_greeting="Welcome to Infroid. How can we help you?"
 	 logged_out_greeting="Welcome to Infroid. How can we help you?">
 	</div>
+	<script>
+$(window).load(function () {
+    $(".trigger_ngohub").click(function(){
+       $('#ngohub').show();
+    });
+	$(".trigger_tictac").click(function(){
+       $('#tictactoe').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('#tictactoe').hide();
+    });
+	$('.hover_bkgr_fricc').click(function(){
+        $('#ngohub').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('#tictactoe').hide();
+    });
+	 $('.popupCloseButton').click(function(){
+        $('#ngohub').hide();
+    });
+});
+</script>
 </body>
 
 </html>

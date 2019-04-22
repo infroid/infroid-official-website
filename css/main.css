@@ -2282,6 +2282,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 700;
 }
 
+
+
+
 @media (max-width: 991.98px) {
   .banner-content h1 {
     font-size: 36px;
@@ -2936,6 +2939,8 @@ h6 {
   .generic-banner .height {
     height: 400px;
   }
+
+ 
 }
 
 .generic-banner .generic-banner-content h2 {
@@ -2958,6 +2963,8 @@ h6 {
   .generic-banner .generic-banner-content p br {
     display: none;
   }
+  
+  
 }
 
 .generic-content h1 {
@@ -2995,3 +3002,141 @@ h6 {
   border-radius: 1rem; 
   border-color: grey;
 }
+.owl-carousel{
+		 box-shadow: 10px 10px 60px #555;
+	}
+
+@media (min-width: 991.98px) {
+	.owl-carousel{
+		width:60%;
+		margin-left:20%;
+		margin-right:20%;
+	}
+	
+
+}
+
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 1.5%;
+}
+
+.hover_bkgr_fricc > div > img {
+	margin-bottom:15px;
+     
+}
+.button {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: #df003a;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 80%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+ .button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_tictac  {
+    cursor: pointer;
+
+}
+.trigger_ngohub {
+    cursor: pointer;
+
+}
+@media (max-width: 768px) {
+	.hover_bkgr_fricc > div {
+   
+   
+   
+    width: 90%;
+   
+	}
+.hover_bkgr_fricc{
+
+    width:100%;
+
+}
+
+}
+
+/* Popup box BEGIN */
+
+
