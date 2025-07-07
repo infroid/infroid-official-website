@@ -146,10 +146,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const elementsToAnimate = [
         '.philosophy-point',
         '.product-item',
-        '.innovation-card',
+        '.value-block',
         '.section-header',
         '.contact-content',
-        '.stat-item'
+        '.stat-item',
+        '.values-header'
     ];
     
     elementsToAnimate.forEach(selector => {
