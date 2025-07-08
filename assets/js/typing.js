@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const typingElement = document.querySelector('.typing-effect');
     if (typingElement) {
         const words = [
-            'Transforming industries through intelligent technology solutions.',
-            'Building enterprise-grade products that scale.',
-            'Innovating at the intersection of AI and human experience.',
-            'Creating technology that drives measurable impact.'
+            'Creating thoughtful solutions for real-world challenges.',
+            'Small team, meaningful impact, endless possibilities.',
+            'Learning, growing, and building something special.',
+            'Your success is our motivation.'
         ];
         new TypeWriter(typingElement, words);
     }

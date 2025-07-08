@@ -151,6 +151,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
+    // Parallax effect for sections
+    const parallaxElements = document.querySelectorAll('.section-title, .product-item, .value-block');
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed || 0.5;
+            const yPos = -(scrolled * speed);
+            const rect = element.getBoundingClientRect();
+            
+            if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+                element.style.transform = `translateY(${yPos * 0.1}px)`;
+            }
+        });
+    }, { passive: true });
+    
     // Add fade-in class to elements
     const elementsToAnimate = [
         '.philosophy-point',
@@ -226,6 +243,28 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         document.querySelector('.hero-content').style.opacity = '1';
     }, 100);
+    
+    // Mouse movement effect for hero
+    const heroSection = document.querySelector('.hero');
+    const heroContentElement = document.querySelector('.hero-content');
+    
+    if (heroSection && heroContentElement && window.innerWidth > 768) {
+        heroSection.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth - 0.5;
+            const mouseY = e.clientY / window.innerHeight - 0.5;
+            
+            heroContentElement.style.transform = `
+                perspective(1000px)
+                rotateY(${mouseX * 5}deg)
+                rotateX(${-mouseY * 5}deg)
+                translateZ(10px)
+            `;
+        });
+        
+        heroSection.addEventListener('mouseleave', () => {
+            heroContentElement.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) translateZ(0)';
+        });
+    }
     
     
     // Stat counter animation
