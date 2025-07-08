@@ -2094,220 +2094,304 @@ body.loaded .section {
     height: 100%;
 }
 
-/* SVG Illustrations */
-.health-illustration,
-.idea-illustration {
+/* Abstract Visual Elements */
+.abstract-visual {
     width: 100%;
     height: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    display: block;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* Healthcare Illustration Animations */
-.heartbeat-line {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: heartbeat-draw 3s ease-out forwards, heartbeat-pulse 2s ease-in-out 3s infinite;
+/* Healthcare Visual Elements */
+.health-visual .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.8;
+    animation: orb-float 6s ease-in-out infinite;
 }
 
-@keyframes heartbeat-draw {
-    to {
-        stroke-dashoffset: 0;
-    }
+.health-visual .orb-primary {
+    width: 120px;
+    height: 120px;
+    background: var(--color-accent);
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
 }
 
-@keyframes heartbeat-pulse {
-    0%, 100% {
-        opacity: 0.8;
-    }
-    50% {
-        opacity: 1;
-        filter: drop-shadow(0 0 10px var(--color-accent));
-    }
-}
-
-.pulse-dot {
-    animation: pulse-scale 2s ease-in-out infinite;
-}
-
-@keyframes pulse-scale {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.5);
-        opacity: 0.7;
-    }
-}
-
-.data-card {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: card-slide-up 0.6s ease-out forwards;
-}
-
-.data-card:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.data-card:nth-child(4) {
-    animation-delay: 0.6s;
-}
-
-@keyframes card-slide-up {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.particles .particle {
-    animation: float-particle 6s ease-in-out infinite;
-}
-
-.particles .particle:nth-child(2) {
+.health-visual .orb-secondary {
+    width: 80px;
+    height: 80px;
+    background: var(--color-purple);
+    bottom: 30%;
+    right: 25%;
     animation-delay: 2s;
-    animation-duration: 8s;
 }
 
-.particles .particle:nth-child(3) {
+.health-visual .orb-accent {
+    width: 60px;
+    height: 60px;
+    background: var(--color-accent-green);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation-delay: 4s;
-    animation-duration: 10s;
 }
 
-@keyframes float-particle {
-    0%, 100% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(20px, -30px);
-    }
-    50% {
-        transform: translate(-20px, -50px);
-    }
-    75% {
-        transform: translate(30px, -20px);
-    }
+.health-visual .floating-ring {
+    position: absolute;
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: ring-expand 4s ease-in-out infinite;
 }
 
-/* Idea Flow Illustration Animations */
-.central-node {
-    animation: rotate-slow 20s linear infinite;
-    transform-origin: center;
+.health-visual .ring-1 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 0s;
 }
 
-@keyframes rotate-slow {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.health-visual .ring-2 {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: var(--color-purple);
+    animation-delay: 2s;
 }
 
-.connection-line {
-    stroke-dasharray: 5, 5;
-    animation: dash-move 1s linear infinite;
+.health-visual .pulse-wave {
+    position: absolute;
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    top: 50%;
+    left: -200px;
+    animation: pulse-move 3s linear infinite;
 }
 
-@keyframes dash-move {
-    to {
-        stroke-dashoffset: -10;
-    }
+/* IdeaHub Visual Elements */
+.idea-visual .geometric-shape {
+    position: absolute;
+    opacity: 0.8;
+    animation: shape-rotate 8s linear infinite;
 }
 
-.connected-nodes .node {
-    animation: node-pulse 3s ease-in-out infinite;
-    transform-origin: center;
+.idea-visual .shape-hexagon {
+    width: 100px;
+    height: 100px;
+    background: var(--color-amber);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.connected-nodes .node:nth-child(odd) {
-    animation-delay: 0.5s;
+.idea-visual .shape-square {
+    width: 60px;
+    height: 60px;
+    background: var(--color-accent);
+    border-radius: 8px;
+    bottom: 35%;
+    left: 25%;
+    animation-delay: -2s;
 }
 
-.connected-nodes .node:nth-child(even) {
-    animation-delay: 1s;
+.idea-visual .shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 52px solid var(--color-purple);
+    top: 40%;
+    right: 20%;
+    animation-delay: -4s;
 }
 
-@keyframes node-pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
+.idea-visual .orbit-ring {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit-rotate 20s linear infinite;
 }
 
-.floating-elements .float-card {
-    animation: float-horizontal 8s ease-in-out infinite;
+.idea-visual .orbit-ring::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.floating-elements .float-card:nth-child(2) {
-    animation-delay: 4s;
-    animation-direction: reverse;
+.idea-visual .particle-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
-@keyframes float-horizontal {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(20px);
-    }
+.idea-visual .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: particle-float 5s ease-in-out infinite;
 }
 
-.floating-elements .float-dot {
-    animation: dot-float 6s ease-in-out infinite;
+.idea-visual .particle:nth-child(1) {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
 }
 
-.floating-elements .float-dot:nth-child(4) {
-    animation-delay: 3s;
-    animation-duration: 8s;
+.idea-visual .particle:nth-child(2) {
+    top: 70%;
+    left: 80%;
+    background: var(--color-amber);
+    animation-delay: 1.25s;
 }
 
-@keyframes dot-float {
+.idea-visual .particle:nth-child(3) {
+    top: 30%;
+    right: 20%;
+    background: var(--color-purple);
+    animation-delay: 2.5s;
+}
+
+.idea-visual .particle:nth-child(4) {
+    bottom: 20%;
+    left: 40%;
+    animation-delay: 3.75s;
+}
+
+/* Animations */
+@keyframes orb-float {
     0%, 100% {
         transform: translate(0, 0) scale(1);
     }
-    33% {
-        transform: translate(10px, -10px) scale(1.2);
+    25% {
+        transform: translate(20px, -30px) scale(1.1);
     }
-    66% {
-        transform: translate(-10px, 10px) scale(0.8);
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(30px, 10px) scale(1.05);
     }
 }
 
-/* Hover Effects */
-.product-item:hover .heartbeat-line {
-    animation-play-state: paused;
-    filter: drop-shadow(0 0 15px var(--color-accent));
+@keyframes ring-expand {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.1;
+    }
 }
 
-.product-item:hover .node {
-    animation-duration: 1.5s;
+@keyframes pulse-move {
+    0% {
+        left: -200px;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        left: calc(100% + 200px);
+        opacity: 0;
+    }
 }
 
-.product-item:hover .central-node {
-    animation-duration: 10s;
+@keyframes shape-rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
-/* Responsive Adjustments */
+@keyframes orbit-rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes particle-float {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(10px, -20px);
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments for Product Visuals */
 @media (max-width: 768px) {
-    .health-illustration,
-    .idea-illustration {
-        max-width: 300px;
+    .abstract-visual {
+        transform: scale(0.8);
     }
     
-    .data-card text {
-        font-size: 10px;
+    .health-visual .orb-primary {
+        width: 80px;
+        height: 80px;
     }
     
-    .data-card text:last-child {
-        font-size: 18px;
+    .health-visual .orb-secondary {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .health-visual .orb-accent {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .idea-visual .shape-hexagon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .idea-visual .shape-square {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .idea-visual .orbit-ring {
+        width: 140px;
+        height: 140px;
     }
 }
 
