@@ -17,6 +17,24 @@ window.addEventListener('load', function() {
     hidePreloader();
 });
 
+// Theme Management
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // If user has a saved preference, use it
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (!systemPrefersDark) {
+        // If no saved preference and system prefers light, set light theme
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+    // Otherwise, default to dark theme (no attribute needed)
+}
+
+// Initialize theme before DOM loads to prevent flash
+initTheme();
+
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     // Initially hide body overflow for preloader
@@ -26,6 +44,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const yearElement = document.getElementById('copyright-year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Theme Switcher
+    const themeSwitcher = document.getElementById('themeSwitcher');
+    if (themeSwitcher) {
+        themeSwitcher.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
     }
     
     // Mobile Navigation Toggle

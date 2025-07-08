@@ -4,38 +4,59 @@
 
 /* Variables */
 :root {
-    /* Core Colors */
-    --color-black: #000000;
-    --color-off-black: #0A0A0A;
-    --color-dark-gray: #141414;
-    --color-gray: #1F1F1F;
-    --color-light-gray: #2A2A2A;
-    --color-border: #333333;
-    --color-white: #FFFFFF;
-    --color-off-white: #FAFAFA;
+    /* Base Palette Colors - These don't change */
+    --palette-black: #000000;
+    --palette-off-black: #0A0A0A;
+    --palette-dark-gray: #141414;
+    --palette-gray: #1F1F1F;
+    --palette-light-gray: #2A2A2A;
+    --palette-medium-gray: #333333;
+    --palette-white: #FFFFFF;
+    --palette-off-white: #FAFAFA;
+    --palette-light: #F5F5F5;
+    --palette-lighter: #E5E5E5;
+    --palette-lightest: #D4D4D4;
     
-    /* Accent Colors */
-    --color-accent-green: #10B981;
-    --color-accent-amber: #F59E0B;
-    --color-accent-red: #EF4444;
-    --color-accent-purple: #8B5CF6;
+    /* Accent Colors - Same for both themes */
+    --accent-green: #10B981;
+    --accent-amber: #F59E0B;
+    --accent-red: #EF4444;
+    --accent-purple: #8B5CF6;
     
-    /* Text Colors */
-    --color-text-primary: #FFFFFF;
+    /* Default to dark theme */
+    --color-bg: var(--palette-black);
+    --color-bg-secondary: var(--palette-off-black);
+    --color-surface: var(--palette-dark-gray);
+    --color-surface-secondary: var(--palette-gray);
+    --color-border: var(--palette-medium-gray);
+    
+    --color-text-primary: var(--palette-white);
     --color-text-secondary: #A1A1A1;
     --color-text-tertiary: #737373;
     
-    /* Semantic Colors */
-    --color-bg: var(--color-black);
-    --color-bg-secondary: var(--color-off-black);
-    --color-surface: var(--color-dark-gray);
-    --color-surface-secondary: var(--color-gray);
+    --color-accent-green: var(--accent-green);
+    --color-accent-amber: var(--accent-amber);
+    --color-accent-red: var(--accent-red);
+    --color-accent-purple: var(--accent-purple);
+    
+    /* Component-specific colors */
+    --nav-bg: rgba(10, 10, 10, 0.9);
+    --nav-border: var(--color-border);
+    --button-primary-bg: var(--color-accent-green);
+    --button-primary-text: var(--palette-black);
+    --button-primary-hover: #0EA674;
+    --button-secondary-bg: transparent;
+    --button-secondary-border: var(--color-border);
+    --button-secondary-hover-bg: var(--color-surface);
+    --button-light-bg: var(--palette-white);
+    --button-light-text: var(--palette-black);
+    --button-light-hover: var(--palette-off-white);
     
     /* Gradients */
-    --gradient-radial: radial-gradient(circle at 50% 0%, var(--color-dark-gray) 0%, var(--color-black) 100%);
-    --gradient-mesh: radial-gradient(at 40% 20%, var(--color-dark-gray) 0px, transparent 50%),
-                     radial-gradient(at 80% 0%, var(--color-gray) 0px, transparent 50%),
-                     radial-gradient(at 0% 50%, var(--color-dark-gray) 0px, transparent 50%);
+    --gradient-radial: radial-gradient(circle at 50% 0%, var(--color-surface) 0%, var(--color-bg) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, var(--color-surface) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, var(--color-surface-secondary) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, var(--color-surface) 0px, transparent 50%);
     --gradient-accent: linear-gradient(135deg, var(--color-accent-green) 0%, var(--color-accent-purple) 100%);
     
     /* Fonts */
@@ -96,6 +117,96 @@
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.16);
+    
+    /* Shape shadows and glows */
+    --glow-green: 0 0 20px rgba(16, 185, 129, 0.4);
+    --glow-green-sm: 0 0 10px rgba(16, 185, 129, 0.6);
+    --glow-purple: 0 0 20px rgba(139, 92, 246, 0.5);
+    --glow-purple-sm: 0 0 10px rgba(139, 92, 246, 0.3);
+    --glow-amber: 0 0 15px rgba(245, 158, 11, 0.5);
+    --glow-amber-sm: 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+/* Light theme */
+[data-theme="light"] {
+    --color-bg: var(--palette-white);
+    --color-bg-secondary: var(--palette-off-white);
+    --color-surface: var(--palette-light);
+    --color-surface-secondary: var(--palette-lighter);
+    --color-border: var(--palette-lightest);
+    
+    --color-text-primary: var(--palette-off-black);
+    --color-text-secondary: #525252;
+    --color-text-tertiary: #737373;
+    
+    /* Component-specific colors for light mode */
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-border: var(--color-border);
+    --button-primary-bg: var(--color-accent-green);
+    --button-primary-text: var(--palette-white);
+    --button-primary-hover: #0EA674;
+    --button-secondary-bg: transparent;
+    --button-secondary-border: var(--palette-lightest);
+    --button-secondary-hover-bg: var(--color-surface);
+    --button-light-bg: var(--palette-off-black);
+    --button-light-text: var(--palette-white);
+    --button-light-hover: var(--palette-black);
+    
+    /* Shadows for light mode */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+    
+    /* Shape shadows and glows for light mode */
+    --glow-green: 0 0 20px rgba(16, 185, 129, 0.3);
+    --glow-green-sm: 0 0 10px rgba(16, 185, 129, 0.5);
+    --glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
+    --glow-purple-sm: 0 0 10px rgba(139, 92, 246, 0.2);
+    --glow-amber: 0 0 15px rgba(245, 158, 11, 0.4);
+    --glow-amber-sm: 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+/* System preference support */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+        --color-bg: var(--palette-white);
+        --color-bg-secondary: var(--palette-off-white);
+        --color-surface: var(--palette-light);
+        --color-surface-secondary: var(--palette-lighter);
+        --color-border: var(--palette-lightest);
+        
+        --color-text-primary: var(--palette-off-black);
+        --color-text-secondary: #525252;
+        --color-text-tertiary: #737373;
+        
+        /* Component-specific colors for light mode */
+        --nav-bg: rgba(255, 255, 255, 0.9);
+        --nav-border: var(--color-border);
+        --button-primary-bg: var(--color-accent-green);
+        --button-primary-text: var(--palette-white);
+        --button-primary-hover: #0EA674;
+        --button-secondary-bg: transparent;
+        --button-secondary-border: var(--palette-lightest);
+        --button-secondary-hover-bg: var(--color-surface);
+        --button-light-bg: var(--palette-off-black);
+        --button-light-text: var(--palette-white);
+        --button-light-hover: var(--palette-black);
+        
+        /* Shadows for light mode */
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+        --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+        
+        /* Shape shadows and glows for light mode */
+        --glow-green: 0 0 20px rgba(16, 185, 129, 0.3);
+        --glow-green-sm: 0 0 10px rgba(16, 185, 129, 0.5);
+        --glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
+        --glow-purple-sm: 0 0 10px rgba(139, 92, 246, 0.2);
+        --glow-amber: 0 0 15px rgba(245, 158, 11, 0.4);
+        --glow-amber-sm: 0 0 8px rgba(245, 158, 11, 0.2);
+    }
 }
 
 /* ========================================
@@ -124,6 +235,7 @@ body {
     background: var(--color-bg);
     overflow-x: hidden;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography */
@@ -205,33 +317,33 @@ img {
 }
 
 .btn-primary {
-    background: var(--color-accent-green);
-    color: var(--color-black);
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
 }
 
 .btn-primary:hover {
-    background: #0EA674;
+    background: var(--button-primary-hover);
     transform: translateY(-2px);
 }
 
 .btn-secondary-outline {
-    background: transparent;
+    background: var(--button-secondary-bg);
     color: var(--color-text-primary);
-    border: 2px solid var(--color-border);
+    border: 2px solid var(--button-secondary-border);
 }
 
 .btn-secondary-outline:hover {
-    background: var(--color-surface);
-    border-color: var(--color-light-gray);
+    background: var(--button-secondary-hover-bg);
+    border-color: var(--button-secondary-border);
 }
 
 .btn-light {
-    background: var(--color-white);
-    color: var(--color-black);
+    background: var(--button-light-bg);
+    color: var(--button-light-text);
 }
 
 .btn-light:hover {
-    background: var(--color-off-white);
+    background: var(--button-light-hover);
     transform: translateY(-2px);
 }
 
@@ -255,12 +367,12 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 10, 10, 0.9);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 100;
     transition: var(--transition);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--nav-border);
 }
 
 .nav-container {
@@ -959,7 +1071,7 @@ img {
         top: 70px;
         left: 0;
         right: 0;
-        background: rgba(20, 20, 20, 0.98);
+        background: var(--nav-bg);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
@@ -968,8 +1080,8 @@ img {
         transform: translateY(-100%);
         opacity: 0;
         transition: var(--transition);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        border-top: 1px solid var(--color-border);
+        box-shadow: var(--shadow-lg);
+        border-top: 1px solid var(--nav-border);
     }
     
     .nav-menu.active {
@@ -1029,7 +1141,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-black);
+    background: var(--color-bg);
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -1149,14 +1261,15 @@ img {
     inset: 0;
     border: 2px solid var(--color-accent-green);
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    box-shadow: var(--glow-green);
     animation: pulse-ripple 3s ease-in-out infinite;
 }
 
 .shape-2 {
     width: 40px;
     height: 40px;
-    background: rgba(139, 92, 246, 0.2);
+    background: var(--color-surface-secondary);
+    opacity: 0.3;
     border: 2px solid var(--color-accent-purple);
     border-radius: 50%;
     bottom: 25px;
@@ -1185,7 +1298,7 @@ img {
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+    box-shadow: var(--glow-amber-sm);
 }
 
 .shape-3::after {
@@ -1216,7 +1329,7 @@ img {
     border: 2px solid transparent;
     border-top-color: var(--color-accent-green);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+    box-shadow: var(--glow-green-sm);
     animation: fast-spin-accelerate 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
@@ -1224,7 +1337,8 @@ img {
 .shape-5 {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0.2) 100%);
+    background: linear-gradient(135deg, var(--color-accent-purple) 0%, var(--color-surface-secondary) 100%);
+    opacity: 0.4;
     border: none;
     border-radius: 50%;
     top: 20px;
@@ -1234,14 +1348,15 @@ img {
         fluid-morph 8s ease-in-out infinite,
         float-y 4s ease-in-out infinite;
     box-shadow: 
-        0 0 20px rgba(139, 92, 246, 0.5),
-        inset 0 0 10px rgba(139, 92, 246, 0.3);
+        var(--glow-purple),
+        inset var(--glow-purple-sm);
 }
 
 .shape-6 {
     width: 45px;
     height: 45px;
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.4) 0%, rgba(245, 158, 11, 0.2) 100%);
+    background: linear-gradient(135deg, var(--color-accent-amber) 0%, var(--color-surface-secondary) 100%);
+    opacity: 0.4;
     border: none;
     border-radius: 50%;
     bottom: 25px;
@@ -1251,8 +1366,8 @@ img {
         fluid-morph-alt 10s ease-in-out infinite,
         float-x 5s ease-in-out infinite;
     box-shadow: 
-        0 0 15px rgba(245, 158, 11, 0.5),
-        inset 0 0 8px rgba(245, 158, 11, 0.3);
+        var(--glow-amber),
+        inset var(--glow-amber-sm);
 }
 
 /* Animation Keyframes */
@@ -1457,5 +1572,89 @@ img {
     
     .value-visual {
         max-width: 250px;
+    }
+}
+
+/* ========================================
+   THEME SWITCHER
+   ======================================== */
+
+.theme-switcher {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.theme-switcher:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-switcher:active {
+    transform: scale(0.95);
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.icon-sun,
+.icon-moon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.icon-sun {
+    color: var(--color-accent-amber);
+    opacity: 0;
+    transform: rotate(-180deg);
+}
+
+.icon-moon {
+    color: var(--color-accent-purple);
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="light"] .icon-sun {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="light"] .icon-moon {
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+/* Mobile positioning */
+@media (max-width: 767px) {
+    .theme-switcher {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .theme-icon {
+        width: 20px;
+        height: 20px;
     }
 }

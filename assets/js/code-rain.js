@@ -35,12 +35,31 @@ class CodeRain {
     }
     
     animate() {
-        // Fade effect
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        // Get computed styles
+        const styles = getComputedStyle(document.documentElement);
+        const bgColor = styles.getPropertyValue('--color-bg').trim();
+        
+        // Fade effect with theme-aware background
+        const isDark = !document.documentElement.hasAttribute('data-theme') || 
+                      document.documentElement.getAttribute('data-theme') === 'dark';
+        const fadeOpacity = isDark ? 0.05 : 0.03;
+        
+        // Convert hex to rgba for fade effect
+        let r, g, b;
+        if (bgColor.startsWith('#')) {
+            r = parseInt(bgColor.slice(1, 3), 16);
+            g = parseInt(bgColor.slice(3, 5), 16);
+            b = parseInt(bgColor.slice(5, 7), 16);
+        } else {
+            // Default to black if color format is unexpected
+            r = g = b = 0;
+        }
+        
+        this.ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${fadeOpacity})`;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
-        // Green text
-        this.ctx.fillStyle = '#10B981';
+        // Green text from CSS variable
+        const accentGreen = styles.getPropertyValue('--color-accent-green').trim();
         this.ctx.font = `${this.fontSize}px JetBrains Mono, monospace`;
         
         for (let i = 0; i < this.drops.length; i++) {
@@ -48,9 +67,18 @@ class CodeRain {
             const x = i * this.fontSize;
             const y = this.drops[i] * this.fontSize;
             
-            // Gradient effect
+            // Gradient effect with theme color
             const opacity = 1 - (y / this.canvas.height);
-            this.ctx.fillStyle = `rgba(16, 185, 129, ${opacity})`;
+            
+            // Extract RGB from accent color
+            let gr = 16, gg = 185, gb = 129; // Default green values
+            if (accentGreen.startsWith('#')) {
+                gr = parseInt(accentGreen.slice(1, 3), 16);
+                gg = parseInt(accentGreen.slice(3, 5), 16);
+                gb = parseInt(accentGreen.slice(5, 7), 16);
+            }
+            
+            this.ctx.fillStyle = `rgba(${gr}, ${gg}, ${gb}, ${opacity})`;
             
             this.ctx.fillText(char, x, y);
             
