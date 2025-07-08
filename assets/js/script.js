@@ -11,8 +11,6 @@ window.addEventListener('load', function() {
         setTimeout(() => {
             document.querySelector('.preloader').classList.add('hidden');
             document.body.style.overflow = 'visible';
-            // Trigger initial animations
-            document.body.classList.add('loaded');
         }, remainingTime);
     }
     
@@ -199,11 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.hero-content').style.opacity = '1';
     }, 100);
     
-    
-    // Add loading state
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-    });
     
     // Stat counter animation
     const statObserver = new IntersectionObserver(function(entries) {
