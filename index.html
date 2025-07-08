@@ -179,7 +179,7 @@
     <section id="products" class="section products">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Featured Solutions</span>
+                <span class="section-label">Featured Products</span>
                 <h2 class="section-title">Flagship Products<br>Driving Innovation</h2>
             </div>
             <div class="products-showcase">
@@ -217,9 +217,59 @@
                     <div class="product-visual">
                         <div class="product-preview health">
                             <div class="preview-content">
-                                <div class="preview-bar"></div>
-                                <div class="preview-bar short"></div>
-                                <div class="preview-circle"></div>
+                                <!-- Healthcare Dashboard Illustration -->
+                                <svg class="health-illustration" viewBox="0 0 400 300"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Background Grid -->
+                                    <defs>
+                                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--color-border)"
+                                                stroke-width="0.5" opacity="0.3" />
+                                        </pattern>
+                                        <linearGradient id="healthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:var(--color-accent);stop-opacity:0.8" />
+                                            <stop offset="100%"
+                                                style="stop-color:var(--color-purple);stop-opacity:0.8" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grid)" />
+
+                                    <!-- Heart Rate Monitor -->
+                                    <g class="heart-monitor">
+                                        <path class="heartbeat-line"
+                                            d="M 20 150 L 60 150 L 70 120 L 80 180 L 90 100 L 100 200 L 110 150 L 380 150"
+                                            fill="none" stroke="url(#healthGradient)" stroke-width="3"
+                                            stroke-linecap="round" />
+                                        <circle class="pulse-dot" cx="110" cy="150" r="5" fill="var(--color-accent)" />
+                                    </g>
+
+                                    <!-- Data Cards -->
+                                    <g class="data-cards">
+                                        <rect class="data-card" x="240" y="40" width="140" height="80" rx="8"
+                                            fill="var(--color-surface)" stroke="var(--color-border)" />
+                                        <text x="260" y="65" fill="var(--color-text-secondary)" font-size="12">Patient
+                                            Score</text>
+                                        <text x="260" y="95" fill="var(--color-text-primary)" font-size="24"
+                                            font-weight="bold">98.5%</text>
+
+                                        <rect class="data-card" x="240" y="140" width="140" height="80" rx="8"
+                                            fill="var(--color-surface)" stroke="var(--color-border)" />
+                                        <text x="260" y="165" fill="var(--color-text-secondary)" font-size="12">Active
+                                            Users</text>
+                                        <text x="260" y="195" fill="var(--color-text-primary)" font-size="24"
+                                            font-weight="bold">2.5K+</text>
+                                    </g>
+
+                                    <!-- Floating Particles -->
+                                    <g class="particles">
+                                        <circle class="particle" cx="50" cy="50" r="2" fill="var(--color-accent)"
+                                            opacity="0.6" />
+                                        <circle class="particle" cx="150" cy="80" r="3" fill="var(--color-purple)"
+                                            opacity="0.5" />
+                                        <circle class="particle" cx="350" cy="250" r="2" fill="var(--color-accent)"
+                                            opacity="0.7" />
+                                    </g>
+                                </svg>
                             </div>
                         </div>
                     </div>
@@ -259,12 +309,73 @@
                     <div class="product-visual">
                         <div class="product-preview idea">
                             <div class="preview-content">
-                                <div class="preview-grid">
-                                    <div class="grid-item"></div>
-                                    <div class="grid-item"></div>
-                                    <div class="grid-item"></div>
-                                    <div class="grid-item"></div>
-                                </div>
+                                <!-- Idea Flow Illustration -->
+                                <svg class="idea-illustration" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="ideaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:var(--color-amber);stop-opacity:0.8" />
+                                            <stop offset="100%"
+                                                style="stop-color:var(--color-accent);stop-opacity:0.8" />
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- Central Node -->
+                                    <g class="central-node">
+                                        <circle cx="200" cy="150" r="40" fill="var(--color-surface)"
+                                            stroke="url(#ideaGradient)" stroke-width="2" />
+                                        <circle cx="200" cy="150" r="35" fill="none" stroke="url(#ideaGradient)"
+                                            stroke-width="1" opacity="0.5" />
+                                        <text x="200" y="155" text-anchor="middle" fill="var(--color-text-primary)"
+                                            font-size="14" font-weight="bold">IDEA</text>
+                                    </g>
+
+                                    <!-- Connected Nodes -->
+                                    <g class="connected-nodes">
+                                        <!-- Top Left Node -->
+                                        <line class="connection-line" x1="200" y1="150" x2="100" y2="80"
+                                            stroke="var(--color-border)" stroke-width="1" stroke-dasharray="5,5" />
+                                        <circle class="node" cx="100" cy="80" r="25" fill="var(--color-surface)"
+                                            stroke="var(--color-amber)" stroke-width="2" />
+                                        <text x="100" y="85" text-anchor="middle" fill="var(--color-text-secondary)"
+                                            font-size="12">Plan</text>
+
+                                        <!-- Top Right Node -->
+                                        <line class="connection-line" x1="200" y1="150" x2="300" y2="80"
+                                            stroke="var(--color-border)" stroke-width="1" stroke-dasharray="5,5" />
+                                        <circle class="node" cx="300" cy="80" r="25" fill="var(--color-surface)"
+                                            stroke="var(--color-accent)" stroke-width="2" />
+                                        <text x="300" y="85" text-anchor="middle" fill="var(--color-text-secondary)"
+                                            font-size="12">Build</text>
+
+                                        <!-- Bottom Left Node -->
+                                        <line class="connection-line" x1="200" y1="150" x2="100" y2="220"
+                                            stroke="var(--color-border)" stroke-width="1" stroke-dasharray="5,5" />
+                                        <circle class="node" cx="100" cy="220" r="25" fill="var(--color-surface)"
+                                            stroke="var(--color-purple)" stroke-width="2" />
+                                        <text x="100" y="225" text-anchor="middle" fill="var(--color-text-secondary)"
+                                            font-size="12">Test</text>
+
+                                        <!-- Bottom Right Node -->
+                                        <line class="connection-line" x1="200" y1="150" x2="300" y2="220"
+                                            stroke="var(--color-border)" stroke-width="1" stroke-dasharray="5,5" />
+                                        <circle class="node" cx="300" cy="220" r="25" fill="var(--color-surface)"
+                                            stroke="var(--color-accent)" stroke-width="2" />
+                                        <text x="300" y="225" text-anchor="middle" fill="var(--color-text-secondary)"
+                                            font-size="12">Launch</text>
+                                    </g>
+
+                                    <!-- Floating Elements -->
+                                    <g class="floating-elements">
+                                        <rect class="float-card" x="50" y="30" width="60" height="20" rx="10"
+                                            fill="var(--color-amber)" opacity="0.2" />
+                                        <rect class="float-card" x="290" y="250" width="80" height="20" rx="10"
+                                            fill="var(--color-accent)" opacity="0.2" />
+                                        <circle class="float-dot" cx="350" cy="50" r="3" fill="var(--color-purple)"
+                                            opacity="0.6" />
+                                        <circle class="float-dot" cx="50" cy="250" r="4" fill="var(--color-accent)"
+                                            opacity="0.5" />
+                                    </g>
+                                </svg>
                             </div>
                         </div>
                     </div>
@@ -287,7 +398,7 @@
                         <div class="value-shape shape-2"></div>
                     </div>
                     <div class="value-content">
-                        <h3>Human-Centered Design</h3>
+                        <h3>Human-Centric Design</h3>
                         <p>We engineer solutions that prioritize user experience, ensuring seamless integration with
                             existing workflows and maximum adoption rates.</p>
                     </div>
@@ -324,14 +435,14 @@
             <div class="contact-gradient"></div>
             <div class="container">
                 <div class="contact-content">
-                    <span class="contact-label">Get Started</span>
-                    <h2 class="contact-title">Ready to Transform<br>Your Business?</h2>
+                    <span class="contact-label">Let's Connect</span>
+                    <h2 class="contact-title">Want to Know<br>More?</h2>
                     <p class="contact-subtitle">
-                        Connect with our team to explore how our solutions can drive your digital transformation.
+                        Drop us a line. We'd love to hear from you.
                     </p>
                     <div class="contact-cta">
                         <a href="mailto:hello@infroid.com" class="btn btn-light">
-                            <span>Schedule Consultation</span>
+                            <span>Say Hello</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M7 17L17 7M17 7H7M17 7V17" />
