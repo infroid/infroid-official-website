@@ -885,12 +885,12 @@ img {
 .products-showcase {
     display: flex;
     flex-direction: column;
-    gap: 4rem; /* Consistent spacing between items */
+    gap: 3rem; /* Reduced spacing between items */
 }
 
 .product-item {
     position: relative;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     background: transparent;
     border-radius: 0;
     border: none;
@@ -1492,73 +1492,121 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
-}
-
-.preloader.hidden {
-    opacity: 0;
-    visibility: hidden;
+    overflow: hidden;
 }
 
 .preloader-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-lg);
+    position: relative;
+    z-index: 2;
 }
 
 .preloader-logo-container {
     position: relative;
     width: 80px;
     height: 80px;
+    animation: preloader-breathe 2s ease-in-out infinite;
 }
 
 .preloader-logo {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: brightness(1.2);
 }
 
-.preloader-ring {
+.preloader-pulse {
     position: absolute;
-    inset: -20px;
-    border: 2px solid transparent;
-    border-top-color: var(--color-accent-green);
+    inset: -40px;
+    background: radial-gradient(circle, var(--color-accent-green) 0%, transparent 70%);
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    opacity: 0;
+    animation: pulse-expand 2s ease-out infinite;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.preloader-reveal {
+    position: absolute;
+    width: 150vmax;
+    height: 150vmax;
+    background: var(--color-bg);
+    border-radius: 50%;
+    transform: scale(0);
+    transform-origin: center;
+    z-index: 1;
 }
 
-.preloader-text {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
+/* Loading animations */
+@keyframes preloader-breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
-.loading-dots {
-    display: flex;
+@keyframes pulse-expand {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
 
-.loading-dots span {
-    animation: blink 1.4s infinite;
+/* Hide animation */
+.preloader.hiding .preloader-logo-container {
+    animation: logo-expand-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.loading-dots span:nth-child(2) {
-    animation-delay: 0.2s;
+.preloader.hiding .preloader-reveal {
+    animation: reveal-expand 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
 }
 
-.loading-dots span:nth-child(3) {
-    animation-delay: 0.4s;
+@keyframes logo-expand-fade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: brightness(1.2);
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+        filter: brightness(2) blur(10px);
+    }
 }
 
-@keyframes blink {
-    0%, 60%, 100% { opacity: 0.3; }
-    30% { opacity: 1; }
+@keyframes reveal-expand {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Initial hide content for preloader */
+.hero-content {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Content reveal animation */
+body.loaded .hero-content {
+    animation: content-reveal 0.8s ease-out 0.2s forwards;
+}
+
+body.loaded .stats-section,
+body.loaded .section {
+    animation: content-reveal 0.8s ease-out forwards;
+}
+
+@keyframes content-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* Mouse scroll indicator */
@@ -1984,7 +2032,7 @@ img {
     
     /* Reduced gaps between elements */
     .products-showcase {
-        gap: 3rem;
+        gap: 2rem;
     }
     
     .philosophy-points {
@@ -2049,4 +2097,15 @@ img {
     .contact-subtitle {
         margin-bottom: 2rem;
     }
+}
+/* Fade in animation for scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

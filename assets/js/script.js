@@ -1,7 +1,7 @@
-// Preloader
+// Preloader with enhanced animation
 window.addEventListener('load', function() {
-    // Ensure minimum loading time for better UX
-    const minLoadTime = 800;
+    // Ensure minimum loading time for animation
+    const minLoadTime = 1500;
     const startTime = performance.now();
     
     function hidePreloader() {
@@ -9,8 +9,17 @@ window.addEventListener('load', function() {
         const remainingTime = Math.max(0, minLoadTime - elapsedTime);
         
         setTimeout(() => {
-            document.querySelector('.preloader').classList.add('hidden');
-            document.body.style.overflow = 'visible';
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('hiding');
+            
+            // Add loaded class to body for content animations
+            document.body.classList.add('loaded');
+            
+            // Remove preloader after animation completes
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.body.style.overflow = 'visible';
+            }, 1000);
         }, remainingTime);
     }
     
@@ -173,10 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '.philosophy-point',
         '.product-item',
         '.value-block',
-        '.section-header',
-        '.contact-content',
-        '.stat-item',
-        '.values-header'
+        '.stat-item'
     ];
     
     elementsToAnimate.forEach(selector => {
@@ -239,10 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     
-    // Smooth reveal for hero elements
-    setTimeout(() => {
-        document.querySelector('.hero-content').style.opacity = '1';
-    }, 100);
+    // Hero elements are now revealed via the loaded class animation
     
     // Mouse movement effect for hero
     const heroSection = document.querySelector('.hero');
