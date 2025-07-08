@@ -92,22 +92,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     
-    // Navigation background on scroll
+    // Simplified navigation hide/show on scroll
     const nav = document.querySelector('.nav');
     let lastScroll = 0;
     
-    function updateNavOnScroll() {
-        const currentScroll = window.pageYOffset || window.scrollY;
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
         
-        if (currentScroll > 50) {
-            nav.style.background = 'rgba(255, 255, 255, 0.98)';
-            nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            nav.style.background = 'rgba(255, 255, 255, 0.8)';
-            nav.style.boxShadow = 'none';
-        }
-        
-        // Hide/show nav on scroll
         if (currentScroll > lastScroll && currentScroll > 100) {
             nav.style.transform = 'translateY(-100%)';
         } else {
@@ -115,16 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScroll = currentScroll;
-    }
-    
-    // Throttled scroll event
-    let scrollThrottle = false;
-    window.addEventListener('scroll', function() {
-        if (!scrollThrottle) {
-            requestAnimationFrame(updateNavOnScroll);
-            scrollThrottle = true;
-            setTimeout(() => scrollThrottle = false, 100);
-        }
     }, { passive: true });
     
     // Intersection Observer for fade-in animations
