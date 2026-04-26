@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const navMenu = document.getElementById('navMenu');
     const themeSwitcher = document.getElementById('themeSwitcher');
     const year = document.getElementById('copyrightYear');
-    const contactForm = document.getElementById('contactForm');
-    const topicButtons = document.querySelectorAll('[data-topic]');
-    const topicInput = document.getElementById('topicInput');
 
     if (year) {
         year.textContent = new Date().getFullYear();
@@ -45,48 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', nextTheme);
             localStorage.setItem('theme', nextTheme);
-        });
-    }
-
-    if (topicButtons.length && topicInput) {
-        const urlTopic = new URLSearchParams(window.location.search).get('topic');
-        const initial = urlTopic || topicInput.value;
-
-        topicButtons.forEach(function (button) {
-            const isActive = button.dataset.topic === initial;
-            button.classList.toggle('active', isActive);
-            if (isActive) topicInput.value = button.dataset.topic;
-
-            button.addEventListener('click', function () {
-                topicButtons.forEach(function (other) {
-                    other.classList.remove('active');
-                });
-                button.classList.add('active');
-                topicInput.value = button.dataset.topic;
-            });
-        });
-    }
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const data = new FormData(contactForm);
-            const subject = 'Infroid: ' + (data.get('topic') || 'Contact');
-            const body = [
-                'Name: ' + (data.get('name') || ''),
-                'Email: ' + (data.get('email') || ''),
-                'Company: ' + (data.get('company') || ''),
-                '',
-                data.get('message') || ''
-            ].join('\n');
-
-            window.location.href = 'mailto:hello@infroid.in?subject=' +
-                encodeURIComponent(subject) +
-                '&body=' +
-                encodeURIComponent(body);
-
-            contactForm.classList.add('sent');
         });
     }
 });
