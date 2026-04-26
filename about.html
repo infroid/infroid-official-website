@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About Infroid Technologies: a lean, remote-first deep-tech studio from India building a few deliberate products.">
+    <title>About - Infroid</title>
+
+    <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+        })();
+    </script>
+</head>
+
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="Infroid home">
+                <span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span>
+            </a>
+            <div class="nav-links" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary desktop-only">Say hello</a>
+                <button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="about-hero">
+            <div class="wrap">
+                <div class="eyebrow accent"><span class="dot"></span>About</div>
+                <h1>
+                    A small studio<br>
+                    working on a few<br>
+                    <span class="serif">hard problems.</span>
+                </h1>
+                <p class="lede">
+                    No empire-building. No expansion theatre. We want to ship a small number of things we are proud of,
+                    slowly and well.
+                </p>
+                <div class="about-meta">
+                    <div class="col">
+                        <div class="k">Founded</div>
+                        <div class="v">2018</div>
+                    </div>
+                    <div class="col">
+                        <div class="k">Where</div>
+                        <div class="v">Remote-first &middot; India</div>
+                    </div>
+                    <div class="col">
+                        <div class="k">Shape</div>
+                        <div class="v">Lean &middot; independent</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="thesis">
+            <div class="wrap">
+                <div class="thesis-grid">
+                    <div>
+                        <div class="eyebrow accent"><span class="tick"></span>The thesis</div>
+                    </div>
+                    <div>
+                        <h2>Few products.<br>Considered, deeply.</h2>
+                        <p>
+                            Most software companies sell <strong>velocity</strong>. We are trying to sell something
+                            rarer: the patience to be right.
+                        </p>
+                        <p>
+                            Three products, on purpose. Each one earned a long stretch of work before we wrote line one.
+                            We are not trying to be everywhere. We are trying to be <strong>the right answer</strong> in
+                            the few places we show up.
+                        </p>
+                        <div class="pull">
+                            "If you cannot say in two sentences why a product has to exist, it does not have to exist."
+                        </div>
+                        <p>
+                            We are independent and intend to stay that way. The next thing arrives when it is ready, not
+                            when a roadmap says it should.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="lhs">
+                        <div class="eyebrow accent"><span class="dot"></span>What we do not bend on</div>
+                        <h2 class="display-md">Three values.</h2>
+                    </div>
+                </div>
+                <div class="values">
+                    <div class="val">
+                        <div class="num">01 / TASTE</div>
+                        <h3>Taste is not optional.</h3>
+                        <p>We care about the moment before something becomes measurable: whether it feels clear,
+                            useful, and inevitable.</p>
+                    </div>
+                    <div class="val">
+                        <div class="num">02 / RIGOR</div>
+                        <h3>Defend every decision.</h3>
+                        <p>We write down why we chose what we chose. Then we revisit it when the product teaches us
+                            something better.</p>
+                    </div>
+                    <div class="val">
+                        <div class="num">03 / KIND</div>
+                        <h3>Hard work, calm team.</h3>
+                        <p>The problems are hard enough. The way we treat each other through them should make the work
+                            easier to hold.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="team">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="lhs">
+                        <div class="eyebrow accent"><span class="dot"></span>The team</div>
+                        <h2 class="display-md">A handful of people.<br>Generalists with one obsession.</h2>
+                    </div>
+                    <div class="rhs">
+                        We hire <strong>generalists</strong>. Most of us write code. All of us write docs. The whole
+                        team reviews product specs, regardless of role. If you want to work with us, write to
+                        <a href="mailto:hello@infroid.in" class="link">hello@infroid.in</a> with your most considered
+                        piece of work.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="lhs">
+                        <div class="eyebrow accent"><span class="dot"></span>The arc</div>
+                        <h2 class="display-md">The story so far.</h2>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="tl-row">
+                        <div class="yr">2018</div>
+                        <div class="what">Infroid founded as a small studio. <span>First work: healthcare software.</span>
+                        </div>
+                    </div>
+                    <div class="tl-row">
+                        <div class="yr">2020</div>
+                        <div class="what">EaseMyDisease shipped to its first production setting. <span>Long build,
+                                quiet lessons.</span></div>
+                    </div>
+                    <div class="tl-row">
+                        <div class="yr">2024</div>
+                        <div class="what">MyFoodCraving research begins. <span>Food, health metrics, and guided
+                                cooking become one product thesis.</span></div>
+                    </div>
+                    <div class="tl-row">
+                        <div class="yr">2025</div>
+                        <div class="what">ContextHub leaves the lab. <span>Internal tool first. Then friends. Then
+                                beta.</span></div>
+                    </div>
+                    <div class="tl-row">
+                        <div class="yr">2026</div>
+                        <div class="what">ContextHub v1 ships publicly. <span>MyFoodCraving in beta. EMD in
+                                production.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-strip">
+            <div class="wrap">
+                <div class="contact-grid">
+                    <div>
+                        <div class="eyebrow accent"><span class="dot"></span>Get in touch</div>
+                        <h2>Want to work with us,<br>or for us?</h2>
+                        <p>Same inbox either way. We read everything.</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="row">
+                            <span class="k">Email</span>
+                            <span class="v"><a href="mailto:hello@infroid.in">hello@infroid.in</a></span>
+                        </div>
+                        <div class="row">
+                            <span class="k">Studio</span>
+                            <span class="v">Remote-first &middot; India</span>
+                        </div>
+                        <div class="actions">
+                            <a href="contact.html" class="btn btn-primary">Open contact form</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="brand"><span class="b">[</span>in<span class="b">]</span>froid<span
+                            class="dot"></span></a>
+                    <p>A small studio. A few hard problems. Built deliberately.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="title">Products</div>
+                    <a href="products.html#contexthub">ContextHub</a>
+                    <a href="products.html#easemydisease">EaseMyDisease</a>
+                    <a href="products.html#myfoodcraving">MyFoodCraving</a>
+                </div>
+                <div class="footer-col">
+                    <div class="title">Company</div>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <div class="title">Reach us</div>
+                    <a href="mailto:hello@infroid.in">hello@infroid.in</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span id="copyrightYear">2026</span> Infroid Technologies Pvt. Ltd.</span>
+                <span class="live-meta"><span class="pulse"></span>Remote-first &middot; India</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,432 +1,349 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Infroid Technologies - Enterprise technology solutions driving digital transformation. Featuring advanced healthcare management and innovation platforms.">
+        content="Infroid Technologies is a lean deep-tech studio from India building a few deliberate products across context infrastructure, healthcare intelligence, and personalized nutrition.">
     <meta name="keywords"
-        content="Infroid, Enterprise Solutions, Healthcare Technology, Innovation Management, AI Platform, Digital Transformation">
-    <title>Infroid - Enterprise Technology Solutions</title>
+        content="Infroid, ContextHub, EaseMyDisease, MyFoodCraving, deep-tech, healthcare technology, personalized nutrition, health metrics, guided cooking, India">
+    <title>Infroid - Deep-tech, built deliberately</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
         rel="stylesheet">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Theme initialization (prevent FOUC) -->
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-theme', savedTheme);
-            } else if (!systemPrefersDark) {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
+            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
         })();
     </script>
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-content">
-            <div class="preloader-logo-container">
-                <img src="assets/images/infroid-logo-transparent.png" alt="Infroid" class="preloader-logo">
-                <div class="preloader-pulse"></div>
-            </div>
-        </div>
-        <div class="preloader-reveal"></div>
-    </div>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="assets/images/infroid-logo-transparent.png" alt="Infroid" class="logo-img">
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="Infroid home">
+                <span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span>
             </a>
-            <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#philosophy" class="nav-link">Philosophy</a>
-                <a href="#products" class="nav-link">Products</a>
-                <a href="#values" class="nav-link">Values</a>
-                <a href="#contact" class="nav-link">Contact</a>
+
+            <div class="nav-links" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
+
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary desktop-only">Say hello</a>
+                <button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="hero-gradient"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">Innovation Studio</div>
-            <h1 class="hero-title">
-                <span class="hero-line">
-                    <span class="hero-word">Building</span>
-                    <span class="hero-word accent" data-text="Together">Together</span>
-                </span>
-            </h1>
-            <p class="hero-subtitle typing-effect">
-                Creating thoughtful solutions for real-world challenges.
-            </p>
-            <div class="hero-cta">
-                <a href="#products" class="btn btn-primary">
-                    <span>Explore Solutions</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
-                <a href="#philosophy" class="btn btn-secondary-outline">
-                    <span>Learn More</span>
-                </a>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <div class="mouse">
-                <div class="mouse-wheel"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3 class="stat-number" data-target="50">0</h3>
-                    <span class="stat-suffix">+</span>
-                    <p class="stat-label">Enterprise Clients</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number" data-target="10">0</h3>
-                    <span class="stat-suffix">K+</span>
-                    <p class="stat-label">Active Users</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number" data-target="25">0</h3>
-                    <span class="stat-suffix">+</span>
-                    <p class="stat-label">Technical Experts</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="stat-number" data-target="99">0</h3>
-                    <span class="stat-suffix">%</span>
-                    <p class="stat-label">Client Satisfaction</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Philosophy Section -->
-    <section id="philosophy" class="section philosophy">
-        <div class="container">
-            <div class="philosophy-content">
-                <div class="philosophy-text">
-                    <span class="section-label">Our Philosophy</span>
-                    <h2 class="section-title">Engineering Excellence</h2>
-                    <p class="philosophy-description">
-                        We architect solutions that balance innovation with reliability, delivering technology that
-                        performs at scale.
-                    </p>
-                    <div class="philosophy-points">
-                        <div class="philosophy-point">
-                            <div class="point-number">01</div>
-                            <div class="point-content">
-                                <h4>Strategic Architecture</h4>
-                                <p>Every solution is meticulously designed with scalability, security, and performance
-                                    at its core</p>
-                            </div>
-                        </div>
-                        <div class="philosophy-point">
-                            <div class="point-number">02</div>
-                            <div class="point-content">
-                                <h4>Client-Centric Approach</h4>
-                                <p>We partner with organizations to deliver solutions that align with their strategic
-                                    objectives</p>
-                            </div>
-                        </div>
-                        <div class="philosophy-point">
-                            <div class="point-number">03</div>
-                            <div class="point-content">
-                                <h4>Innovation Leadership</h4>
-                                <p>We leverage cutting-edge technologies to maintain our competitive edge in the market
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Visual elements removed for cleaner design -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="section products">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Featured Products</span>
-                <h2 class="section-title">Flagship Products<br>Driving Innovation</h2>
-            </div>
-            <div class="products-showcase">
-                <div class="product-item" data-product="easemydisease">
-                    <div class="product-content">
-                        <h3 class="product-title">EaseMyDisease<span class="product-domain">.com</span></h3>
-                        <p class="product-tagline">Enterprise Healthcare Platform</p>
-                        <p class="product-description">
-                            Advanced AI-powered healthcare management system providing predictive analytics,
-                            personalized care pathways, and seamless integration with existing medical infrastructure.
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div class="hero-grid">
+                    <div>
+                        <div class="eyebrow accent"><span class="dot"></span>Infroid &middot; est. 2018</div>
+                        <h1 class="display-xl">
+                            Deep-tech,<br>
+                            <span class="serif">built deliberately.</span>
+                        </h1>
+                        <p class="hero-sub">
+                            A small studio working on a few hard problems. We ship when ready, not when scheduled.
                         </p>
-                        <div class="product-stats">
-                            <div class="stat">
-                                <span class="stat-value">5K+</span>
-                                <span class="stat-label">Healthcare Providers</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">99.9%</span>
-                                <span class="stat-label">Uptime SLA</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">HIPAA</span>
-                                <span class="stat-label">Compliant</span>
-                            </div>
+                        <div class="hero-cta">
+                            <a href="products.html" class="btn btn-primary btn-lg">
+                                See what we ship
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
+                            </a>
+                            <a href="about.html" class="btn btn-ghost btn-lg">About us</a>
                         </div>
-                        <a href="#" class="product-cta">
-                            <span>Explore Platform</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" />
-                            </svg>
+                        <div class="hero-meta" aria-label="Company summary">
+                            <span class="item"><span class="ok">.</span> 3 products in focus</span>
+                            <span class="item">Remote-first &middot; India</span>
+                        </div>
+                    </div>
+
+                    <div class="product-index" aria-label="Products at a glance">
+                        <div class="pi-head">
+                            <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                            <span class="label">products</span>
+                        </div>
+                        <a class="pi-row" href="products.html#contexthub">
+                            <span class="pi-num">01</span>
+                            <span>
+                                <span class="pi-name">ContextHub</span>
+                                <span class="pi-tag">Context for humans and agents</span>
+                            </span>
+                            <span class="pi-status live"><span class="pulse"></span>Live</span>
+                        </a>
+                        <a class="pi-row" href="products.html#easemydisease">
+                            <span class="pi-num">02</span>
+                            <span>
+                                <span class="pi-name">EaseMyDisease</span>
+                                <span class="pi-tag">Healthcare intelligence</span>
+                            </span>
+                            <span class="pi-status live"><span class="pulse"></span>Live</span>
+                        </a>
+                        <a class="pi-row" href="products.html#myfoodcraving">
+                            <span class="pi-num">03</span>
+                            <span>
+                                <span class="pi-name">MyFoodCraving</span>
+                                <span class="pi-tag">Nutrition + guided cooking</span>
+                            </span>
+                            <span class="pi-status beta"><span class="pulse"></span>Beta</span>
                         </a>
                     </div>
-                    <div class="product-visual">
-                        <div class="product-preview health">
-                            <div class="preview-content">
-                                <!-- Abstract animated element -->
-                                <div class="abstract-visual health-visual">
-                                    <div class="orb orb-primary"></div>
-                                    <div class="orb orb-secondary"></div>
-                                    <div class="orb orb-accent"></div>
-                                    <div class="floating-ring ring-1"></div>
-                                    <div class="floating-ring ring-2"></div>
-                                    <div class="pulse-wave"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item reverse" data-product="ideahub">
-                    <div class="product-content">
-                        <h3 class="product-title">IdeaHub</h3>
-                        <p class="product-tagline">Innovation Management Platform</p>
-                        <p class="product-description">
-                            Comprehensive enterprise solution for idea lifecycle management, featuring advanced
-                            collaboration tools, workflow automation, and data-driven decision support.
-                        </p>
-                        <div class="product-stats">
-                            <div class="stat">
-                                <span class="stat-value">500+</span>
-                                <span class="stat-label">Active Teams</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">3M+</span>
-                                <span class="stat-label">Ideas Processed</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">85%</span>
-                                <span class="stat-label">Faster Innovation</span>
-                            </div>
-                        </div>
-                        <a href="#" class="product-cta">
-                            <span>View Details</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="product-visual">
-                        <div class="product-preview idea">
-                            <div class="preview-content">
-                                <!-- Abstract animated element -->
-                                <div class="abstract-visual idea-visual">
-                                    <div class="geometric-shape shape-hexagon"></div>
-                                    <div class="geometric-shape shape-square"></div>
-                                    <div class="geometric-shape shape-triangle"></div>
-                                    <div class="orbit-ring"></div>
-                                    <div class="particle-field">
-                                        <span class="particle"></span>
-                                        <span class="particle"></span>
-                                        <span class="particle"></span>
-                                        <span class="particle"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Values Section -->
-    <section id="values" class="section values">
-        <div class="container">
-            <div class="values-header">
-                <span class="section-label">Our Values</span>
-                <h2 class="section-title">Principles That<br>Define Us</h2>
-            </div>
-            <div class="values-showcase">
-                <div class="value-block" data-value="01">
-                    <div class="value-visual">
-                        <div class="value-shape shape-1"></div>
-                        <div class="value-shape shape-2"></div>
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="lhs">
+                        <div class="eyebrow accent"><span class="dot"></span>Three products</div>
+                        <h2 class="display-md">Each its own thesis.<br>Equal share of our attention.</h2>
                     </div>
-                    <div class="value-content">
-                        <h3>Human-Centric Design</h3>
-                        <p>We engineer solutions that prioritize user experience, ensuring seamless integration with
-                            existing workflows and maximum adoption rates.</p>
-                    </div>
-                </div>
-                <div class="value-block" data-value="02">
-                    <div class="value-visual">
-                        <div class="value-shape shape-3"></div>
-                        <div class="value-shape shape-4"></div>
-                    </div>
-                    <div class="value-content">
-                        <h3>Agile Excellence</h3>
-                        <p>We deliver rapid iterations while maintaining enterprise-grade quality, ensuring continuous
-                            improvement through data-driven insights.</p>
-                    </div>
-                </div>
-                <div class="value-block" data-value="03">
-                    <div class="value-visual">
-                        <div class="value-shape shape-5"></div>
-                        <div class="value-shape shape-6"></div>
-                    </div>
-                    <div class="value-content">
-                        <h3>Innovation Culture</h3>
-                        <p>We foster an environment of continuous exploration, leveraging emerging technologies to stay
-                            ahead of industry trends.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="contact-wrapper">
-            <div class="contact-gradient"></div>
-            <div class="container">
-                <div class="contact-content">
-                    <span class="contact-label">Let's Connect</span>
-                    <h2 class="contact-title">Want to Know<br>More?</h2>
-                    <p class="contact-subtitle">
-                        Drop us a line. We'd love to hear from you.
+                    <p class="section-note">
+                        We avoid a crowded portfolio. These are the products we keep returning to, improving, and
+                        supporting.
                     </p>
-                    <div class="contact-cta">
-                        <a href="mailto:hello@infroid.com" class="btn btn-light">
-                            <span>Say Hello</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </div>
+
+                <div class="trio-grid">
+                    <a class="trio-card" href="products.html#contexthub">
+                        <div class="num">01 / LIVE</div>
+                        <div class="visual" aria-hidden="true">
+                            <svg viewBox="0 0 300 90" preserveAspectRatio="none">
+                                <g stroke="rgba(184,255,92,0.18)" stroke-width="1" fill="none">
+                                    <line x1="0" y1="22" x2="300" y2="22"></line>
+                                    <line x1="0" y1="44" x2="300" y2="44"></line>
+                                    <line x1="0" y1="66" x2="300" y2="66"></line>
+                                </g>
+                                <g font-family="JetBrains Mono, monospace" font-size="9" fill="#B8FF5C"
+                                    fill-opacity="0.74">
+                                    <text x="14" y="18">$ ch pull</text>
+                                    <text x="14" y="40" fill-opacity="0.55">context synced</text>
+                                    <text x="14" y="62">4 files placed</text>
+                                </g>
                             </svg>
-                        </a>
+                        </div>
+                        <h3>ContextHub <span class="chip live">v1</span></h3>
+                        <p class="one-liner">Context for humans and their agents.</p>
+                        <p class="desc">
+                            Teams draft product, architecture, and requirements docs together as markdown. The
+                            <code>ch</code> CLI places clean, agent-ready files into any repo.
+                        </p>
+                        <div class="meta-row">
+                            <div class="pair"><span class="k">Surface</span><span class="v">Web / CLI</span></div>
+                            <div class="pair"><span class="k">Status</span><span class="v">Public</span></div>
+                            <span class="arr" aria-hidden="true">&nearr;</span>
+                        </div>
+                    </a>
+
+                    <a class="trio-card" href="products.html#easemydisease">
+                        <div class="num">02 / LIVE</div>
+                        <div class="visual" aria-hidden="true">
+                            <svg viewBox="0 0 300 90" preserveAspectRatio="none">
+                                <g stroke="rgba(107,184,255,0.12)" stroke-width="1" fill="none">
+                                    <line x1="0" y1="22" x2="300" y2="22"></line>
+                                    <line x1="0" y1="44" x2="300" y2="44"></line>
+                                    <line x1="0" y1="66" x2="300" y2="66"></line>
+                                </g>
+                                <polyline
+                                    points="0,50 40,50 60,50 75,18 90,76 105,50 145,50 175,50 188,30 200,68 213,50 250,50 275,30 290,50 300,50"
+                                    fill="none" stroke="#6BB8FF" stroke-width="1.5" stroke-linejoin="round">
+                                </polyline>
+                            </svg>
+                        </div>
+                        <h3>EaseMyDisease <span class="chip live">v3</span></h3>
+                        <p class="one-liner">Healthcare intelligence that fits existing rails.</p>
+                        <p class="desc">
+                            Predictive analytics and personalized care pathways for hospitals, designed to support
+                            existing healthcare workflows instead of replacing them.
+                        </p>
+                        <div class="meta-row">
+                            <div class="pair"><span class="k">Sector</span><span class="v">Healthcare</span></div>
+                            <div class="pair"><span class="k">Status</span><span class="v">Production</span></div>
+                            <span class="arr" aria-hidden="true">&nearr;</span>
+                        </div>
+                    </a>
+
+                    <a class="trio-card" href="products.html#myfoodcraving">
+                        <div class="num">03 / BETA</div>
+                        <div class="visual" aria-hidden="true">
+                            <svg viewBox="0 0 300 90" preserveAspectRatio="none">
+                                <g fill="none" stroke="rgba(184,255,92,0.3)" stroke-width="1">
+                                    <circle cx="50" cy="45" r="24"></circle>
+                                    <circle cx="50" cy="45" r="14" stroke="rgba(255,184,77,0.48)"></circle>
+                                    <path d="M36 45h8l5-12 8 24 5-12h10"></path>
+                                    <rect x="104" y="18" width="68" height="12" rx="3"></rect>
+                                    <rect x="104" y="39" width="92" height="12" rx="3"
+                                        fill="rgba(184,255,92,0.12)"></rect>
+                                    <rect x="104" y="60" width="54" height="12" rx="3"></rect>
+                                    <path d="M222 18h44v54h-44z"></path>
+                                    <path d="M232 32h24M232 44h18M232 56h22" stroke="rgba(255,184,77,0.62)">
+                                    </path>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3>MyFoodCraving <span class="chip beta">Beta</span></h3>
+                        <p class="one-liner">Personalized food guidance from your health metrics.</p>
+                        <p class="desc">
+                            MyFoodCraving suggests and tracks what to eat from your health metrics, preferences, and
+                            routine, then turns each meal into a complete guided recipe.
+                        </p>
+                        <div class="meta-row">
+                            <div class="pair"><span class="k">Sector</span><span class="v">Personal nutrition</span></div>
+                            <div class="pair"><span class="k">Status</span><span class="v">Closed beta</span></div>
+                            <span class="arr" aria-hidden="true">&nearr;</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="lhs">
+                        <div class="eyebrow accent"><span class="dot"></span>How we work</div>
+                        <h2 class="display-md">A small team.<br>Few products. Long horizons.</h2>
+                    </div>
+                    <p class="section-note">
+                        We prefer quiet progress to loud roadmaps. The product, not the company narrative, gets the
+                        attention.
+                    </p>
+                </div>
+
+                <div class="principles">
+                    <div class="principle">
+                        <div class="num">01 / DEEP</div>
+                        <h3>Time before line one.</h3>
+                        <p>We sit with a problem long enough to understand what should be simple, durable, and left
+                            unsaid.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="num">02 / FEW</div>
+                        <h3>Narrow on purpose.</h3>
+                        <p>Three products is plenty. New work earns its place only when existing work can stand with
+                            less of us.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="num">03 / LEAN</div>
+                        <h3>Small by design.</h3>
+                        <p>Remote-first from India. Decisions stay close to the work, and the team stays small enough
+                            to hold the whole product in view.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-social">
-                    <a href="https://github.com/infroid" target="_blank" class="social-link" aria-label="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com/company/infroid" target="_blank" class="social-link"
-                        aria-label="LinkedIn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                            <rect x="2" y="9" width="4" height="12" />
-                            <circle cx="4" cy="4" r="2" />
-                        </svg>
-                    </a>
-                    <a href="https://x.com/infroid" target="_blank" class="social-link" aria-label="X (Twitter)">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com/infroid" target="_blank" class="social-link" aria-label="Instagram">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                        </svg>
-                    </a>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; <span id="copyright-year">2024</span> Infroid Technologies. All rights reserved.</p>
-                    <div class="footer-legal">
-                        <a href="#">Privacy</a>
-                        <span class="separator">·</span>
-                        <a href="#">Terms</a>
+        <section class="manifesto" aria-labelledby="thesis-title">
+            <div class="wrap">
+                <div class="eyebrow accent"><span class="tick"></span>The thesis</div>
+                <p class="manifesto-quote" id="thesis-title">
+                    <span class="mark">"</span>The next decade of software will not be won by the loudest. It will be
+                    won by teams that decided early, stayed lean, and kept improving <span class="accent">long enough
+                        to be useful.</span><span class="mark">"</span>
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-strip">
+            <div class="wrap">
+                <div class="contact-grid">
+                    <div>
+                        <div class="eyebrow accent"><span class="dot"></span>Get in touch</div>
+                        <h2>Working on something<br>we should know about?</h2>
+                        <p>One inbox. We read everything that lands there.</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="row">
+                            <span class="k">Email</span>
+                            <span class="v"><a href="mailto:hello@infroid.in">hello@infroid.in</a></span>
+                        </div>
+                        <div class="row">
+                            <span class="k">Studio</span>
+                            <span class="v">Remote-first &middot; India</span>
+                        </div>
+                        <div class="actions">
+                            <a href="contact.html" class="btn btn-primary">
+                                Open contact form
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="brand"><span class="b">[</span>in<span class="b">]</span>froid<span
+                            class="dot"></span></a>
+                    <p>A small studio. A few hard problems. Built deliberately.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="title">Products</div>
+                    <a href="products.html#contexthub">ContextHub</a>
+                    <a href="products.html#easemydisease">EaseMyDisease</a>
+                    <a href="products.html#myfoodcraving">MyFoodCraving</a>
+                </div>
+                <div class="footer-col">
+                    <div class="title">Company</div>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <div class="title">Reach us</div>
+                    <a href="mailto:hello@infroid.in">hello@infroid.in</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span id="copyrightYear">2026</span> Infroid Technologies Pvt. Ltd.</span>
+                <span class="live-meta"><span class="pulse"></span>Remote-first &middot; India</span>
             </div>
         </div>
     </footer>
 
-    <!-- Theme Switcher -->
-    <button class="theme-switcher" id="themeSwitcher" aria-label="Toggle theme">
-        <div class="theme-icon">
-            <svg class="icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <circle cx="12" cy="12" r="5" />
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-            </svg>
-            <svg class="icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-        </div>
-    </button>
-
-    <!-- Scripts -->
-    <script src="assets/js/typing.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
