@@ -8,7 +8,24 @@
         content="Infroid is a lean deep-tech studio from India building a few deliberate products across context infrastructure, healthcare intelligence, and personalized nutrition.">
     <meta name="keywords"
         content="Infroid, ContextHub, EaseMyDisease, MyFoodCraving, deep-tech, healthcare technology, personalized nutrition, health metrics, guided cooking, India">
-    <title>Infroid - Deep-tech, built deliberately</title>
+    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+    <title>Deep-tech, built deliberately &mdash; Infroid</title>
+
+    <link rel="canonical" href="https://infroid.in/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Infroid">
+    <meta property="og:title" content="Deep-tech, built deliberately — Infroid">
+    <meta property="og:description"
+        content="Infroid is a lean deep-tech studio from India building a few deliberate products across context infrastructure, healthcare intelligence, and personalized nutrition.">
+    <meta property="og:url" content="https://infroid.in/">
+    <meta property="og:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Deep-tech, built deliberately — Infroid">
+    <meta name="twitter:description"
+        content="Infroid is a lean deep-tech studio from India building a few deliberate products across context infrastructure, healthcare intelligence, and personalized nutrition.">
+    <meta name="twitter:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
 
     <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +38,18 @@
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
-            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else {
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
+            }
         })();
     </script>
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="index.html" class="brand" aria-label="Infroid home">
@@ -42,13 +65,17 @@
             <div class="nav-actions">
                 <a href="mailto:hello@infroid.in" class="btn btn-primary desktop-only">Say hello</a>
                 <button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M12 2v2"></path>
                         <path d="M12 20v2"></path>
                         <path d="M2 12h2"></path>
                         <path d="M20 12h2"></path>
+                    </svg>
+                    <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
                 <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation"
@@ -60,7 +87,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main">
         <section class="hero">
             <div class="wrap">
                 <div class="hero-grid">

@@ -269,6 +269,38 @@ code {
     border-color: var(--border-strong);
 }
 
+.icon-button .icon-moon {
+    display: none;
+}
+
+[data-theme="light"] .icon-button .icon-sun {
+    display: none;
+}
+
+[data-theme="light"] .icon-button .icon-moon {
+    display: block;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 1000;
+    padding: 10px 14px;
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: top var(--dur-base) var(--ease-out);
+}
+
+.skip-link:focus {
+    top: 16px;
+    outline: 2px solid var(--fg);
+    outline-offset: 2px;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
