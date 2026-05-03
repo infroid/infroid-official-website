@@ -1,131 +1,123 @@
 # AGENTS.md
 
-This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+This file provides guidance to coding agents (Codex, Claude Code, etc.) working in this repository.
 
 ## Project Overview
 
-This is the official website for Infroid Technologies - a static website focused on healthcare technology and digital transformation solutions. The site is hosted on GitHub Pages with a custom domain (infroid.in).
+Static marketing site for Infroid Technologies, a deep-tech studio. Hosted on GitHub Pages at the custom domain `infroid.in`. The site is a brief/metadata hub for three products; the live products live on their own domains:
+
+- ContextHub — https://contexthub.one
+- EaseMyDisease — closed beta, contact-only
+- MyFoodCraving — https://myfoodcraving.com
 
 ## Technology Stack
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
-- **Hosting**: GitHub Pages
-- **No Build Tools**: Direct file serving, no compilation needed
-- **No Package Manager**: No dependencies beyond Google Fonts
+- **Frontend**: HTML5, CSS3, vanilla JavaScript (ES6+)
+- **Hosting**: GitHub Pages (deployed from `master`)
+- **No build step, no package manager.** Only external dependency is Google Fonts.
 
 ## Architecture
 
 ### Directory Structure
+
 ```
 /
-├── index.html                      # Single-page application
+├── index.html        # Home
+├── products.html     # Product overviews (each links out to its own site)
+├── about.html        # Studio / thesis / timeline
+├── robots.txt
+├── sitemap.xml
+├── CNAME             # infroid.in
 └── assets/
-    ├── css/styles.css             # Main stylesheet (mobile-first, theme system)
-    ├── js/script.js               # Core functionality (theme, animations, navigation)
-    └── js/typing.js               # TypeWriter animation class
+    ├── css/styles.css   # Single stylesheet, mobile-first, theme tokens
+    ├── js/script.js     # Nav, theme toggle, copyright year
+    └── images/          # Logo, etc.
 ```
 
-### Key Architectural Patterns
+### Theme System
 
-1. **Theme System**: CSS custom properties with `data-theme` attribute on `<html>`
-   - Variables defined in `:root` and overridden in `[data-theme="light"]`
-   - Theme preference stored in localStorage as 'theme'
-   - Respects system color scheme preferences
+CSS custom properties on `:root`, overridden under `[data-theme="light"]`. Initial theme is set by an inline `<script>` in each `<head>` before stylesheets parse, to avoid FOUC:
 
-2. **Animation Strategy**: 
-   - Intersection Observer for scroll-triggered animations
-   - `.fade-in` class with `.visible` state
-   - GPU-accelerated transforms only
-   - Preloader with minimum 1.5s display time
+1. If `localStorage.theme` is set, use it.
+2. Otherwise honor `prefers-color-scheme`.
+3. Default to dark.
 
-3. **JavaScript Organization**:
-   - Theme initialization before DOM load (prevents flash)
-   - All DOM operations wrapped in DOMContentLoaded
-   - Event listeners use passive option where applicable
-   - Throttled scroll events with requestAnimationFrame
+The toggle button in the nav contains both `.icon-sun` and `.icon-moon` SVGs; CSS in `styles.css` shows the appropriate one for the active theme.
 
-## Development Commands
+### JavaScript
 
-Since this is a static site with no build process:
+Everything lives in `assets/js/script.js`. It is small on purpose:
+
+- Sets the footer copyright year.
+- Toggles a `.scrolled` class on the nav past 12 px scroll (passive listener).
+- Mobile nav: open/close on toggle click; close on link click, outside click, or `Escape`.
+- Theme switcher: flips `data-theme` and persists to `localStorage`.
+
+There is no scroll-triggered animation system, no preloader, no typing effect. If you find docs or code that imply otherwise, treat them as stale.
+
+## Development
 
 ```bash
-# Local development - choose one:
-python -m http.server 8000              # Python 3
-python -m SimpleHTTPServer 8000         # Python 2
-npx http-server                         # Node.js
-open index.html                         # Direct browser (limited functionality)
+# Serve locally:
+python3 -m http.server 8000
+# then http://localhost:8000
 
-# Deploy changes:
-git add .
-git commit -m "Your commit message"
-git push origin master                  # Auto-deploys via GitHub Pages
-
-# View live site:
-open https://infroid.in
+# Deploy:
+git push origin master   # GitHub Pages auto-deploys
 ```
 
-## Common Development Tasks
+## Common Tasks
 
-### Adding New Sections
-Sections follow this pattern in index.html:
+### Adding a section
+
+Sections use the `.wrap` container and the `.eyebrow` / heading pattern visible across the existing files:
+
 ```html
-<section id="section-id" class="section">
-    <div class="container">
-        <span class="section-label">LABEL TEXT</span>
-        <h2 class="section-title">Section Title</h2>
-        <!-- Content -->
+<section class="section" id="section-id">
+    <div class="wrap">
+        <div class="eyebrow accent"><span class="dot"></span>Label</div>
+        <h2 class="display-md">Section title</h2>
+        <!-- content -->
     </div>
 </section>
 ```
 
-### Adding Scroll Animations
-In script.js, add selectors to the `elementsToAnimate` array:
-```javascript
-const elementsToAnimate = [
-    '.hero-content',
-    '.section-label',
-    '.section-title',
-    '.your-new-selector'  // Add here
-];
-```
+### Theme colors
 
-### Modifying Theme Colors
-Edit CSS variables in styles.css:
-1. Define base color in `:root` (e.g., `--palette-new: #hexcode`)
-2. Create semantic mapping (e.g., `--color-accent: var(--palette-new)`)
-3. Override in `[data-theme="light"]` if needed
-4. Use in components: `color: var(--color-accent)`
+Edit CSS variables in `assets/css/styles.css`:
 
-### Updating Typing Animation Messages
-In typing.js, modify the `textArray`:
-```javascript
-this.textArray = [
-    'Excellence Driven Results',
-    'Your New Message Here'
-];
-```
+1. Define base palette tokens in `:root` (e.g. `--ink-*`, `--brand-signal`).
+2. Map to semantic tokens (`--bg`, `--fg`, `--accent`).
+3. Override in `[data-theme="light"]` if needed.
+
+Also update the two `<meta name="theme-color">` tags in each HTML file if the base bg colors change.
+
+### Adding a page
+
+When adding a new `.html` file:
+
+- Mirror the `<head>` of an existing page: description, theme-color metas, canonical, OG/Twitter tags, fonts, stylesheet, inline theme init.
+- Add the skip link, nav, `<main id="main">`, and footer.
+- Add a `<url>` entry to `sitemap.xml`.
+
+### Updating a product link
+
+Product CTAs on `products.html` link to the product's own domain with `target="_blank" rel="noopener"`. The home page trio cards link to product anchors on `products.html`, not directly to product sites — the products page is the brief/hub.
 
 ## Code Conventions
 
-- **CSS**: BEM-like naming (.component, .component-element), mobile-first media queries
-- **JavaScript**: ES6+ features, const/let preferred, meaningful variable names
-- **HTML**: Semantic elements, consistent indentation, accessibility attributes
-- **Git**: Commit directly to master branch for deployment
-
-## Performance Considerations
-
-- Images should be optimized before adding (use WebP where possible)
-- Animations use transform/opacity only (no layout properties)
-- Lazy load images and content below the fold
-- Keep JavaScript execution lightweight
-- Test on mobile devices and slow connections
+- **CSS**: BEM-ish (`.component`, `.component-element`), mobile-first media queries.
+- **JavaScript**: ES6+, `const`/`let`, no transpilation.
+- **HTML**: Semantic elements, `aria-*` where it helps, indentation matches the existing files.
+- **Git**: Commit to feature branches; merge to `master` for deploy.
 
 ## Testing Checklist
 
-Before pushing changes:
-1. Test in both light and dark themes
-2. Check responsive behavior (mobile, tablet, desktop)
-3. Verify animations work smoothly
-4. Test in multiple browsers (Chrome, Firefox, Safari)
-5. Ensure no console errors
-6. Check that theme preference persists after reload
+Before pushing:
+
+1. Both themes load correctly (toggle, reload, system preference).
+2. Mobile menu opens, closes on link/outside-click/Escape.
+3. Skip-to-content link appears on first Tab and jumps to `#main`.
+4. No console errors; no 404s in the network tab.
+5. External product links open in a new tab and are correct.
+6. Run a quick Lighthouse pass for SEO/accessibility regressions.

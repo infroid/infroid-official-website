@@ -6,7 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Infroid products: ContextHub, EaseMyDisease, and MyFoodCraving. Three focused products built deliberately.">
-    <title>Products - Infroid</title>
+    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+    <title>Products &mdash; Infroid</title>
+
+    <link rel="canonical" href="https://infroid.in/products.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Infroid">
+    <meta property="og:title" content="Products — Infroid">
+    <meta property="og:description"
+        content="Infroid products: ContextHub, EaseMyDisease, and MyFoodCraving. Three focused products built deliberately.">
+    <meta property="og:url" content="https://infroid.in/products.html">
+    <meta property="og:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Products — Infroid">
+    <meta name="twitter:description"
+        content="Infroid products: ContextHub, EaseMyDisease, and MyFoodCraving. Three focused products built deliberately.">
+    <meta name="twitter:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
 
     <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,12 +36,18 @@
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
-            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else {
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
+            }
         })();
     </script>
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="index.html" class="brand" aria-label="Infroid home">
@@ -38,13 +61,17 @@
             <div class="nav-actions">
                 <a href="mailto:hello@infroid.in" class="btn btn-primary desktop-only">Say hello</a>
                 <button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="4"></circle>
                         <path d="M12 2v2"></path>
                         <path d="M12 20v2"></path>
                         <path d="M2 12h2"></path>
                         <path d="M20 12h2"></path>
+                    </svg>
+                    <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
                 <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation"
@@ -56,7 +83,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main">
         <section class="prod-hero">
             <div class="wrap">
                 <div class="eyebrow accent"><span class="dot"></span>Products</div>
@@ -93,7 +120,7 @@
                         <h2>ContextHub</h2>
                         <p class="one-liner">Context for humans and their agents.</p>
                         <div class="hero-cta">
-                            <span class="chip live">Public</span>
+                            <span class="chip live">Live</span>
                             <span class="chip">Web + CLI</span>
                         </div>
                     </div>
@@ -107,7 +134,7 @@
                                 Every agent. Always in sync.</strong>
                         </p>
                         <div class="actions">
-                            <a href="https://contexthub.one" class="btn btn-primary">Open ContextHub &nearr;</a>
+                            <a href="https://contexthub.one" class="btn btn-primary" target="_blank" rel="noopener">Open ContextHub &nearr;</a>
                         </div>
                     </div>
                 </div>
@@ -210,7 +237,7 @@
                             <div class="item"><span class="ic">^</span> Predictions</div>
                             <div class="item"><span class="ic">-&gt;</span> Pathways</div>
                         </aside>
-                        <main class="emd-main">
+                        <div class="emd-main">
                             <h3>Intake desk</h3>
                             <div class="meta">OPD / closed beta</div>
 
@@ -252,7 +279,7 @@
                                         fill="url(#emdg)" stroke="none"></polyline>
                                 </svg>
                             </div>
-                        </main>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -280,7 +307,7 @@
                             plan turns into dinner instead of another note.
                         </p>
                         <div class="actions">
-                            <a href="mailto:hello@infroid.in?subject=MyFoodCraving" class="btn btn-primary">Ask about MyFoodCraving</a>
+                            <a href="https://myfoodcraving.com" class="btn btn-primary" target="_blank" rel="noopener">Open MyFoodCraving &nearr;</a>
                         </div>
                     </div>
                 </div>
@@ -305,7 +332,7 @@
                 <div class="mock-frame">
                     <div class="mock-chrome">
                         <span class="d r"></span><span class="d y"></span><span class="d g"></span>
-                        <span class="url">MyFoodCraving / plan</span>
+                        <span class="url">myfoodcraving.com / plan</span>
                     </div>
                     <div class="mfc-app">
                         <div class="mfc-plan">
