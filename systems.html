@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See how Infroid's independent products can compose through scoped context and evidence handoffs: six pairwise systems plus the proposed Relay and Observatory product theses.">
+    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+    <title>Systems — Infroid</title>
+
+    <link rel="canonical" href="https://infroid.in/systems.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Infroid">
+    <meta property="og:title" content="Systems — Infroid">
+    <meta property="og:description" content="See how Infroid's independent products can compose through scoped context and evidence handoffs: six pairwise systems plus the proposed Relay and Observatory product theses.">
+    <meta property="og:url" content="https://infroid.in/systems.html">
+    <meta property="og:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Systems — Infroid">
+    <meta name="twitter:description" content="See how Infroid's independent products can compose through scoped context and evidence handoffs: six pairwise systems plus the proposed Relay and Observatory product theses.">
+    <meta name="twitter:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
+
+    <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else {
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="Infroid home"><span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span></a>
+            <div class="nav-links" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="systems.html" class="nav-link active">Systems</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="mailto:hello@infroid.in" class="btn btn-primary desktop-only">Talk to the studio</a>
+                <button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M2 12h2"></path><path d="M20 12h2"></path></svg>
+                    <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="page-hero systems-hero">
+            <div class="wrap">
+                <div class="eyebrow accent"><span class="dot"></span>Systems</div>
+                <h1>Products should stand alone.<br><span class="serif">Portfolios should compound.</span></h1>
+                <p class="lede">Infroid's four products remain independent by default. The portfolio becomes more powerful when one product can make a narrow, explicit handoff to another without collapsing them into a shared database or one giant app.</p>
+                <div class="systems-principle">
+                    <span>DISJOINT BY DEFAULT</span><strong>Separate users, stores, permissions and product promises.</strong>
+                    <span>COMPOSE BY CONSENT</span><strong>Only scoped context crosses a boundary, for one named purpose.</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="combinations">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="lhs"><div class="eyebrow accent"><span class="dot"></span>Six pairwise systems</div><h2 class="display-md">Every permutation has a job.</h2></div>
+                    <p class="section-note">These are portfolio compositions: what each pair can unlock through a controlled handoff. They are not a requirement for either product to be useful alone.</p>
+                </div>
+
+                <div class="system-grid">
+                    <article class="system-card" id="evidence-loop">
+                        <div class="pair-mark"><span>ContextHub</span><b>&times;</b><span>EDP Assist</span></div>
+                        <div class="system-num">01 / THE EVIDENCE LOOP</div>
+                        <h3>Turn product assumptions into questions the data can answer.</h3>
+                        <p>ContextHub identifies an uncertain, high-impact assumption in project context. The exact question and approved business definitions move to EDP Assist. EDP builds the analysis, returns a cited Answer card, and ContextHub attaches the evidence to the assumption or plan.</p>
+                        <div class="bridge-line"><span>Assumption</span><i>&rarr;</i><span>Analysis</span><i>&rarr;</i><span>Evidence</span><i>&rarr;</i><span>Context</span><i>&rarr;</i><span>Plan</span></div>
+                        <strong class="system-payoff">Coding agents know what the team believes. The portfolio can also show what the data supports.</strong>
+                    </article>
+
+                    <article class="system-card" id="health-food-loop">
+                        <div class="pair-mark"><span>EaseMyDisease</span><b>&times;</b><span>MyFoodCraving</span></div>
+                        <div class="system-num">02 / THE HEALTH-TO-FOOD LOOP</div>
+                        <h3>Let selected health context shape food, then carry the recommendation into the kitchen.</h3>
+                        <p>A person chooses eligible wellness signals from EaseMyDisease to share. MyFoodCraving uses only those selected inputs to reprioritize nutrition goals, explains why a meal fits, and continues into guided cooking or a chef request.</p>
+                        <div class="bridge-line"><span>Health context</span><i>&rarr;</i><span>Nutrition priority</span><i>&rarr;</i><span>Meal reason</span><i>&rarr;</i><span>Cook</span></div>
+                        <strong class="system-payoff">The loop does not stop at a health record or a recommendation. It reaches the meal.</strong>
+                    </article>
+
+                    <article class="system-card" id="personal-health-analytics">
+                        <div class="pair-mark"><span>EaseMyDisease</span><b>&times;</b><span>EDP Assist</span></div>
+                        <div class="system-num">03 / PERSONAL HEALTH ANALYTICS</div>
+                        <h3>Ask longitudinal questions across your own exported health history and inspect the work.</h3>
+                        <p>EaseMyDisease can assemble a user-selected, structured export of records, medication adherence, laboratory history and other personal health events. EDP Assist can analyze that dataset read-only, plan the work visibly, and produce a cited notebook.</p>
+                        <div class="bridge-line"><span>Selected export</span><i>&rarr;</i><span>Read-only plan</span><i>&rarr;</i><span>Notebook</span><i>&rarr;</i><span>Cited patterns</span></div>
+                        <strong class="system-payoff">Personal analytics without pretending the model is a doctor: inspect patterns, provenance and limits, then take the evidence to a qualified professional.</strong>
+                    </article>
+
+                    <article class="system-card" id="nutrition-experiment-loop">
+                        <div class="pair-mark"><span>MyFoodCraving</span><b>&times;</b><span>EDP Assist</span></div>
+                        <div class="system-num">04 / THE NUTRITION EXPERIMENT LOOP</div>
+                        <h3>Move from meal logging to inspectable personal pattern analysis.</h3>
+                        <p>MyFoodCraving contributes meal logs, recommendation reasons, cooking sessions and optional wellness-marker history selected by the user. EDP Assist asks analytical questions such as whether adherence, protein coverage, meal timing or recipe effort changed across periods.</p>
+                        <div class="bridge-line"><span>Meals</span><i>&rarr;</i><span>Question</span><i>&rarr;</i><span>Analysis</span><i>&rarr;</i><span>Finding</span><i>&rarr;</i><span>Next question</span></div>
+                        <strong class="system-payoff">The food app explains today's recommendation. The analyst can examine what happened across months.</strong>
+                    </article>
+
+                    <article class="system-card" id="care-context-protocol">
+                        <div class="pair-mark"><span>ContextHub</span><b>&times;</b><span>EaseMyDisease</span></div>
+                        <div class="system-num">05 / THE CARE CONTEXT PROTOCOL</div>
+                        <h3>Apply canonical-context mechanics to the handoff problem in care.</h3>
+                        <p>ContextHub's core idea is that important context should have one canonical form, explicit uncertainty, versions and regenerable projections. EaseMyDisease has the raw ingredients for a user-controlled Care Handoff. The pair suggests a health-context protocol: selected facts, active medications, recent events, open questions and source links packaged as a versioned capsule.</p>
+                        <div class="bridge-line"><span>Records</span><i>&rarr;</i><span>Canonical summary</span><i>&rarr;</i><span>Open questions</span><i>&rarr;</i><span>Care handoff</span></div>
+                        <strong class="system-payoff">A vault stores information. A context protocol makes the information travel without losing what is uncertain or where it came from.</strong>
+                    </article>
+
+                    <article class="system-card" id="food-context-layer">
+                        <div class="pair-mark"><span>ContextHub</span><b>&times;</b><span>MyFoodCraving</span></div>
+                        <div class="system-num">06 / THE FOOD KNOWLEDGE CONTEXT</div>
+                        <h3>Give food and cooking agents a durable understanding of the person, kitchen and constraints.</h3>
+                        <p>MyFoodCraving knows dietary eligibility, preferences, saved recipes, recent meals and the practical cooking surface. ContextHub's context model suggests a household food capsule that separates hard constraints from preferences, captures kitchen equipment and recurring answers, and can render a compact context for cooking or shopping agents.</p>
+                        <div class="bridge-line"><span>Diet boundaries</span><i>&rarr;</i><span>Kitchen context</span><i>&rarr;</i><span>Agent-ready capsule</span><i>&rarr;</i><span>Meal action</span></div>
+                        <strong class="system-payoff">The agent should not rediscover every allergy, disliked cuisine, available utensil and household rule in every conversation.</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section missing-layer">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="lhs"><div class="eyebrow accent"><span class="dot"></span>The 10&times; product</div><h2 class="display-md">The missing layer is not another vertical.</h2></div>
+                    <p class="section-note">It is a trusted way for context and evidence to move between products without creating one omniscient Infroid account.</p>
+                </div>
+
+                <div class="relay-feature">
+                    <div>
+                        <div class="product-label">PROPOSED PRODUCT / INFROID RELAY</div>
+                        <h3>Scoped context exchange with provenance, consent and expiry.</h3>
+                        <p><strong>Infroid Relay</strong> would be the portfolio's connective tissue. Products publish typed, purpose-limited packages instead of opening their databases to one another.</p>
+                        <p>A package can contain a small set of facts, questions, evidence references or analytical outputs. The sender defines the purpose. The user or organization approves the handoff. The receiver sees provenance and expiry. Revocation is first-class.</p>
+                        <div class="portfolio-tags"><span>Context Capsules</span><span>Evidence Cards</span><span>Purpose scope</span><span>Consent</span><span>Expiry</span><span>Provenance</span></div>
+                    </div>
+                    <div class="relay-diagram" aria-label="Infroid Relay concept">
+                        <div class="relay-product">ContextHub<small>context / questions / plans</small></div>
+                        <div class="relay-product">EDP Assist<small>plans / findings / evidence</small></div>
+                        <div class="relay-core"><span>INFROID RELAY</span><strong>Scoped handoff</strong><small>purpose &middot; consent &middot; provenance &middot; expiry</small></div>
+                        <div class="relay-product">EaseMyDisease<small>selected health context</small></div>
+                        <div class="relay-product">MyFoodCraving<small>meals / reasons / cooking</small></div>
+                    </div>
+                </div>
+
+                <div class="thesis-grid relay-rationale">
+                    <div><div class="eyebrow accent"><span class="tick"></span>Why it matters</div></div>
+                    <div>
+                        <h2>Four products become a network without becoming a data lake.</h2>
+                        <p>Without Relay, every integration is a custom one-off. With Relay, every product speaks the same two primitives: <strong>Context Capsule</strong> and <strong>Evidence Card</strong>.</p>
+                        <p>That makes the strongest product combinations repeatable while preserving the disjoint architecture you asked for.</p>
+                        <div class="pull">"Share the minimum context needed for one purpose &mdash; and make its origin visible."</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section observatory">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="lhs"><div class="eyebrow accent"><span class="dot"></span>The 100&times; product thesis</div><h2 class="display-md">A personal observatory for longitudinal questions.</h2></div>
+                    <p class="section-note">This is the product that becomes possible once EMD, MFC, EDP Assist and Relay can work as a governed system.</p>
+                </div>
+
+                <div class="compound-feature">
+                    <div>
+                        <div class="product-label">PROPOSED PRODUCT / INFROID OBSERVATORY</div>
+                        <h3>Private, read-only analysis across the personal data you explicitly assemble.</h3>
+                        <p>Observatory would let a person create a scoped personal dataset from EaseMyDisease and MyFoodCraving, then ask longitudinal questions through an EDP Assist-derived workbench.</p>
+                        <p>It would not diagnose, prescribe, or silently recommend treatment. Its job is narrower: plan analyses, show methods, cite the underlying events, name limitations, and produce a reviewable report the person can discuss with a qualified professional.</p>
+                        <p><strong>Example questions:</strong> How did meal regularity change before and after this period? Which nutrition goals remained consistently unmet? Did medication adherence and logged routine move together? Where are the data gaps too large to support a conclusion?</p>
+                    </div>
+                    <div class="loop-flow">
+                        <div class="loop-node"><span>RELAY</span><strong>Assemble scope</strong><small>only selected sources and date ranges</small></div>
+                        <div class="loop-arrow">&darr;</div>
+                        <div class="loop-node"><span>OBSERVATORY</span><strong>Plan + analyze</strong><small>read-only &middot; narrated &middot; cited</small></div>
+                        <div class="loop-arrow">&darr;</div>
+                        <div class="loop-node accent-node"><span>REPORT</span><strong>Reviewable evidence</strong><small>patterns &middot; limitations &middot; source trail</small></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="manifesto">
+            <div class="wrap">
+                <div class="eyebrow accent"><span class="tick"></span>The compounding thesis</div>
+                <p class="manifesto-quote"><span class="mark">"</span>Context without evidence becomes belief. Evidence without context becomes a chart. Insight without action becomes another tab. <span class="accent">The portfolio closes the loop.</span><span class="mark">"</span></p>
+            </div>
+        </section>
+
+        <section class="reach-strip">
+            <div class="wrap">
+                <div class="reach-grid">
+                    <div><div class="eyebrow accent"><span class="dot"></span>Build the network</div><h2>See a composition Infroid should pursue?</h2><p>We are interested in technical collaborators, domain partners and people who care about context, evidence and controlled data movement.</p></div>
+                    <div class="reach-card"><div class="row"><span class="k">Email</span><span class="v"><a href="mailto:hello@infroid.in">hello@infroid.in</a></span></div><div class="row"><span class="k">Subject</span><span class="v">Portfolio systems</span></div><div class="actions"><a href="mailto:hello@infroid.in?subject=Infroid%20portfolio%20systems" class="btn btn-primary">Start a conversation</a></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-col"><a href="index.html" class="brand"><span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span></a><p>Complex context. Clear action. Built deliberately.</p></div>
+                <div class="footer-col"><div class="title">Products</div><a href="contexthub.html">ContextHub</a><a href="edp-assist.html">EDP Assist</a><a href="easemydisease.html">EaseMyDisease</a><a href="myfoodcraving.html">MyFoodCraving</a></div>
+                <div class="footer-col"><div class="title">Studio</div><a href="systems.html">Systems</a><a href="about.html">About</a></div>
+                <div class="footer-col"><div class="title">Reach us</div><a href="mailto:hello@infroid.in">hello@infroid.in</a></div>
+            </div>
+            <div class="footer-bottom"><span>&copy; <span id="copyrightYear">2026</span> Infroid</span><span class="live-meta"><span class="pulse"></span>Remote-first &middot; India</span></div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
