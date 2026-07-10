@@ -1,123 +1,154 @@
 # AGENTS.md
 
-This file provides guidance to coding agents (Codex, Claude Code, etc.) working in this repository.
+This file provides guidance to coding agents working in this repository.
 
 ## Project Overview
 
-Static marketing site for Infroid Technologies, a deep-tech studio. Hosted on GitHub Pages at the custom domain `infroid.in`. The site is a brief/metadata hub for three products; the live products live on their own domains:
+This repository is the static marketing site for **Infroid**, an independent product studio. It is hosted on GitHub Pages at `infroid.in` and deploys from `master`.
 
-- ContextHub — https://contexthub.one
-- EaseMyDisease — closed beta, contact-only
-- MyFoodCraving — https://myfoodcraving.com
+The primary brand line is:
 
-## Technology Stack
+> Complex context. Clear action.
 
-- **Frontend**: HTML5, CSS3, vanilla JavaScript (ES6+)
-- **Hosting**: GitHub Pages (deployed from `master`)
-- **No build step, no package manager.** Only external dependency is Google Fonts.
+Infroid has four independent product theses:
 
-## Architecture
+1. **ContextHub** — AI context infrastructure. One living context layer for coding agents.
+2. **EDP Assist** — governed, read-only, plan-driven agentic analytics in Jupyter.
+3. **EaseMyDisease** — user-controlled personal health context and care coordination.
+4. **MyFoodCraving** — explainable personalized nutrition, guided cooking and local chefs.
 
-### Directory Structure
+The portfolio story is that each product is complete on its own, while scoped context/evidence handoffs can create stronger systems. Do not describe any product as a prerequisite, module, add-on or backend for another.
 
-```
+The compounding portfolio narrative lives in `systems.html`. Its key rule is:
+
+> Products own domains. Handoffs move the minimum context required for a clear purpose.
+
+`systems.html` also presents two proposed Infroid product theses:
+
+- **Infroid Relay** — typed, purpose-scoped Context Capsules and Evidence Cards with provenance, consent and expiry.
+- **Infroid Observatory** — read-only longitudinal personal analytics using user-selected EMD and MFC context with EDP Assist-style governed analysis.
+
+These are presented as product theses, not as currently deployed product capabilities.
+
+## Site Architecture
+
+```text
 /
-├── index.html        # Home
-├── products.html     # Product overviews (each links out to its own site)
-├── about.html        # Studio / thesis / timeline
+├── index.html              # Home / company thesis
+├── products.html           # Four-product overview
+├── systems.html            # Six product pairings + Relay / Observatory theses
+├── contexthub.html         # ContextHub product page
+├── edp-assist.html         # EDP Assist product page
+├── easemydisease.html      # EaseMyDisease product page
+├── myfoodcraving.html      # MyFoodCraving product page
+├── about.html              # Studio story / principles / timeline
 ├── robots.txt
 ├── sitemap.xml
-├── CNAME             # infroid.in
+├── CNAME                   # infroid.in
 └── assets/
-    ├── css/styles.css   # Single stylesheet, mobile-first, theme tokens
-    ├── js/script.js     # Nav, theme toggle, copyright year
-    └── images/          # Logo, etc.
+    ├── css/styles.css      # Original site system
+    ├── css/portfolio.css   # Portfolio, product-detail and Systems additions
+    ├── js/script.js        # Theme, nav and copyright year
+    └── images/
 ```
 
-### Theme System
+## Technology
 
-CSS custom properties on `:root`, overridden under `[data-theme="light"]`. Initial theme is set by an inline `<script>` in each `<head>` before stylesheets parse, to avoid FOUC:
+- HTML5, CSS3, vanilla JavaScript.
+- No build step or package manager.
+- Google Fonts is the only external front-end dependency.
+- GitHub Pages deploys `master`.
 
-1. If `localStorage.theme` is set, use it.
-2. Otherwise honor `prefers-color-scheme`.
-3. Default to dark.
+## Brand and Content Rules
 
-The toggle button in the nav contains both `.icon-sun` and `.icon-moon` SVGs; CSS in `styles.css` shows the appropriate one for the active theme.
+### Positioning
 
-### JavaScript
+Lead with the actual product mechanism. Avoid generic terms such as:
 
-Everything lives in `assets/js/script.js`. It is small on purpose:
+- modern IT solutions
+- AI-powered solutions
+- digital transformation
+- affordable solutions
+- development/customization services
 
-- Sets the footer copyright year.
-- Toggles a `.scrolled` class on the nav past 12 px scroll (passive listener).
-- Mobile nav: open/close on toggle click; close on link click, outside click, or `Escape`.
-- Theme switcher: flips `data-theme` and persists to `localStorage`.
+Do not repeatedly frame Infroid as slow, tiny or anti-growth. The company is independent and focused; the tone should communicate technical seriousness rather than limitation.
 
-There is no scroll-triggered animation system, no preloader, no typing effect. If you find docs or code that imply otherwise, treat them as stale.
+### Product status
+
+Do not reintroduce `Closed beta`, `Experimental`, or maturity badges as the primary product-card metadata. Use domain labels such as `AI context infrastructure`, `Agentic analytics`, `Personal health`, and `Personalized nutrition`.
+
+### Claims
+
+Do not invent user counts, hospital adoption, clinical outcomes, regulatory approvals or product availability.
+
+For EaseMyDisease:
+
+- do not claim diagnosis or disease prediction;
+- do not say it replaces doctors or emergency services;
+- do not publish regulatory/compliance claims without separately verified evidence.
+
+For MyFoodCraving:
+
+- preserve the general-wellness / not-medical-advice boundary;
+- dietary identity, allergies and intolerances are described as hard eligibility constraints;
+- optional health markers may prioritize nutritional goals.
+
+For cross-product systems:
+
+- describe them as scoped, user-controlled handoffs;
+- do not imply unrestricted shared databases or automatic vault access;
+- keep purpose, provenance, consent and expiry visible in the narrative.
+
+## Theme System
+
+CSS custom properties are defined in `assets/css/styles.css` and overridden under `[data-theme="light"]`.
+
+Each page performs theme initialization inline in `<head>` before the main scripts load:
+
+1. use `localStorage.theme` when present;
+2. otherwise honor `prefers-color-scheme`.
+
+The nav theme toggle is handled by `assets/js/script.js`.
 
 ## Development
 
 ```bash
-# Serve locally:
 python3 -m http.server 8000
-# then http://localhost:8000
-
-# Deploy:
-git push origin master   # GitHub Pages auto-deploys
+# open http://localhost:8000
 ```
 
-## Common Tasks
+Deploy by updating `master`; GitHub Pages handles the public deployment.
 
-### Adding a section
+## Adding a Page
 
-Sections use the `.wrap` container and the `.eyebrow` / heading pattern visible across the existing files:
+Mirror the metadata and theme initialization of an existing product detail page. Every public page should include:
 
-```html
-<section class="section" id="section-id">
-    <div class="wrap">
-        <div class="eyebrow accent"><span class="dot"></span>Label</div>
-        <h2 class="display-md">Section title</h2>
-        <!-- content -->
-    </div>
-</section>
-```
+- description;
+- canonical URL;
+- Open Graph metadata;
+- Twitter metadata;
+- theme-color metadata;
+- favicon;
+- `styles.css` and `portfolio.css` where portfolio components are used;
+- skip link;
+- primary nav;
+- `<main id="main">`;
+- site footer;
+- `assets/js/script.js`.
 
-### Theme colors
-
-Edit CSS variables in `assets/css/styles.css`:
-
-1. Define base palette tokens in `:root` (e.g. `--ink-*`, `--brand-signal`).
-2. Map to semantic tokens (`--bg`, `--fg`, `--accent`).
-3. Override in `[data-theme="light"]` if needed.
-
-Also update the two `<meta name="theme-color">` tags in each HTML file if the base bg colors change.
-
-### Adding a page
-
-When adding a new `.html` file:
-
-- Mirror the `<head>` of an existing page: description, theme-color metas, canonical, OG/Twitter tags, fonts, stylesheet, inline theme init.
-- Add the skip link, nav, `<main id="main">`, and footer.
-- Add a `<url>` entry to `sitemap.xml`.
-
-### Updating a product link
-
-Product CTAs on `products.html` link to the product's own domain with `target="_blank" rel="noopener"`. The home page trio cards link to product anchors on `products.html`, not directly to product sites — the products page is the brief/hub.
-
-## Code Conventions
-
-- **CSS**: BEM-ish (`.component`, `.component-element`), mobile-first media queries.
-- **JavaScript**: ES6+, `const`/`let`, no transpilation.
-- **HTML**: Semantic elements, `aria-*` where it helps, indentation matches the existing files.
-- **Git**: Commit to feature branches; merge to `master` for deploy.
+Add the URL to `sitemap.xml`.
 
 ## Testing Checklist
 
-Before pushing:
+Before publishing:
 
-1. Both themes load correctly (toggle, reload, system preference).
-2. Mobile menu opens, closes on link/outside-click/Escape.
-3. Skip-to-content link appears on first Tab and jumps to `#main`.
-4. No console errors; no 404s in the network tab.
-5. External product links open in a new tab and are correct.
-6. Run a quick Lighthouse pass for SEO/accessibility regressions.
+1. Parse all HTML without structural errors.
+2. Check duplicate IDs.
+3. Verify local `.html` links and anchors resolve.
+4. Validate `sitemap.xml` as XML.
+5. Parse `assets/css/portfolio.css` for CSS syntax errors.
+6. Test light and dark themes.
+7. Test mobile navigation.
+8. Check the four product pages and Systems page at mobile and desktop widths.
+9. Confirm external product links use `target="_blank" rel="noopener"`.
+10. Run a browser/Lighthouse pass when the environment provides a usable browser runtime.
