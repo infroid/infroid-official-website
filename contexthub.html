@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,89 +7,23 @@
     <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
     <title>ContextHub — Shared Context for AI Coding Agents | Infroid</title>
-
     <link rel="canonical" href="https://infroid.in/contexthub.html">
-
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Infroid">
-    <meta property="og:title" content="ContextHub — Shared Context for AI Coding Agents | Infroid">
-    <meta property="og:description" content="ContextHub keeps product, architecture and requirements context current across coding agents with local repo analysis, gap-filling questions and team context sync.">
-    <meta property="og:url" content="https://infroid.in/contexthub.html">
-    <meta property="og:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="ContextHub — Shared Context for AI Coding Agents | Infroid">
-    <meta name="twitter:description" content="ContextHub keeps product, architecture and requirements context current across coding agents with local repo analysis, gap-filling questions and team context sync.">
-    <meta name="twitter:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
-
-    <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/portfolio.css">
-
-    <script>
-        (function () {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-theme', savedTheme);
-            } else {
-                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-                document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
-            }
-        })();
-    </script>
+    <meta property="og:type" content="website"><meta property="og:site_name" content="Infroid"><meta property="og:title" content="ContextHub — Shared Context for AI Coding Agents | Infroid"><meta property="og:description" content="ContextHub keeps product, architecture and requirements context current across coding agents with local repo analysis, gap-filling questions and team context sync."><meta property="og:url" content="https://infroid.in/contexthub.html"><meta property="og:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
+    <meta name="twitter:card" content="summary"><meta name="twitter:title" content="ContextHub — Shared Context for AI Coding Agents | Infroid"><meta name="twitter:description" content="ContextHub keeps product, architecture and requirements context current across coding agents with local repo analysis, gap-filling questions and team context sync."><meta name="twitter:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
+    <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/portfolio.css">
+    <script>(function(){const savedTheme=localStorage.getItem('theme');if(savedTheme){document.documentElement.setAttribute('data-theme',savedTheme);}else{const prefersLight=window.matchMedia('(prefers-color-scheme: light)').matches;document.documentElement.setAttribute('data-theme',prefersLight?'light':'dark');}})();</script>
 </head>
-
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="brand" aria-label="Infroid home">
-                <span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span>
-            </a>
-            <div class="nav-links" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="products.html" class="nav-link active">Products</a>
-                <a href="systems.html" class="nav-link">Systems</a>
-                <a href="about.html" class="nav-link">About</a>
-            </div>
-            <div class="nav-actions">
-                <a href="mailto:hello@infroid.in" class="btn btn-primary desktop-only">Talk to the studio</a>
-                <button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme">
-                    <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M2 12h2"></path><path d="M20 12h2"></path></svg>
-                    <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
-            </div>
-        </div>
-    </nav>
-
+    <nav class="nav" id="nav"><div class="nav-inner"><a href="index.html" class="brand" aria-label="Infroid home"><span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span></a><div class="nav-links" id="navMenu"><a href="index.html" class="nav-link">Home</a><a href="products.html" class="nav-link active">Products</a><a href="systems.html" class="nav-link">Systems</a><a href="about.html" class="nav-link">About</a></div><div class="nav-actions"><a href="mailto:hello@infroid.in" class="btn btn-primary desktop-only">Talk to Infroid</a><button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme"><svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2"></path></svg><svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button><button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button></div></div></nav>
     <main id="main">
-        <section class="page-hero product-detail-hero">
-            <div class="wrap">
-                <div class="eyebrow accent"><span class="dot"></span>01 / AI context infrastructure</div>
-                <h1>ContextHub</h1>
-                <p class="product-tagline">One living context layer for every coding agent.</p>
-                <p class="lede">Find what your agents do not know. Answer it once. Keep product, architecture, requirements and plans current across tools and teams.</p>
-                <div class="hero-cta"><span class="chip">Local repo analysis</span><span class="chip">Confidence-gated questions</span><span class="chip">Web + CLI</span><span class="chip">Agent-native context</span></div>
-                <div class="hero-cta"><a href="https://contexthub.one" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Open ContextHub</a><a href="systems.html" class="btn btn-ghost btn-lg">See portfolio systems</a></div>
-            </div>
-        </section>
-
+        <section class="page-hero product-detail-hero"><div class="wrap"><div class="eyebrow accent"><span class="dot"></span>AI context infrastructure</div><h1>ContextHub</h1><p class="product-tagline">One living context layer for every coding agent.</p><p class="lede">Find what your agents do not know. Answer it once. Keep product, architecture, requirements and plans current across tools and teams.</p><div class="hero-cta"><span class="chip">Local repo analysis</span><span class="chip">Confidence-gated questions</span><span class="chip">Web + CLI</span><span class="chip">Agent-native context</span></div><div class="hero-cta"><a href="https://contexthub.one" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Open ContextHub</a><a href="systems.html" class="btn btn-ghost btn-lg">See portfolio systems</a></div></div></section>
         <section class="section"><div class="wrap"><div class="thesis-grid"><div><div class="eyebrow accent"><span class="tick"></span>The problem</div></div><div><h2>AI coding agents are capable. Their project understanding is fragile.</h2><p>Teams maintain <code>CLAUDE.md</code>, <code>AGENTS.md</code>, tool rules, architecture notes and requirements independently. The same fact can drift across files, disappear from a conversation, or remain an assumption nobody has challenged.</p><p>File conversion is not the hard problem. <strong>Freshness and missing context are.</strong> ContextHub builds a canonical project understanding, finds low-confidence gaps, and asks the team the questions that matter.</p></div></div></div></section>
-
         <section class="section"><div class="wrap"><div class="section-head"><div class="lhs"><div class="eyebrow accent"><span class="dot"></span>Product surface</div><h2 class="display-md">Built around the loop.</h2></div><p class="section-note">ContextHub treats context as a living system instead of another document.</p></div><div class="feature-grid"><article class="feature-card"><span>01</span><h3>Local repo graph</h3><p>Analyze repository structure locally and derive a project graph without sending the source repository to the server.</p></article><article class="feature-card"><span>02</span><h3>Ranked context questions</h3><p>Low-confidence facts become explicit questions ranked by impact and confidence gap.</p></article><article class="feature-card"><span>03</span><h3>One canonical context</h3><p>Product, architecture, requirements, constraints and answers strengthen one shared context layer.</p></article><article class="feature-card"><span>04</span><h3>Plan against the graph</h3><p>Planning uses the same project context and unresolved questions rather than a disconnected chat history.</p></article><article class="feature-card"><span>05</span><h3>Agent-native rendering</h3><p>Synchronize the canonical context into the files and shapes different coding agents expect.</p></article><article class="feature-card"><span>06</span><h3>Exportable knowledge</h3><p>The accumulated context layer remains portable instead of becoming a black-box dependency.</p></article></div></div></section>
-
         <section class="section"><div class="wrap"><div class="section-head"><div class="lhs"><div class="eyebrow accent"><span class="dot"></span>How it works</div><h2 class="display-md">From repository to current agent context.</h2></div></div><div class="mechanism-list"><div class="mechanism-step"><span>01</span><div><h3>Analyze locally</h3><p>Build the project graph on the developer's machine. Source code stays local.</p></div></div><div class="mechanism-step"><span>02</span><div><h3>Expose uncertainty</h3><p>Turn incomplete assumptions into ranked, answerable questions.</p></div></div><div class="mechanism-step"><span>03</span><div><h3>Answer anywhere</h3><p>A human can resolve the question from the web or CLI. The answer updates the canonical context.</p></div></div><div class="mechanism-step"><span>04</span><div><h3>Synchronize agents</h3><p>Render the current understanding into each agent's native context surface.</p></div></div><div class="mechanism-step"><span>05</span><div><h3>Close the loop</h3><p>Plans and completed work flow back into the same project understanding.</p></div></div></div><div class="signal-panel terminal-signal detail-signal"><div class="signal-head"><span>context / checkout-service</span><span>confidence loop</span></div><div class="signal-row"><code>Q1</code><strong>What happens after the third payment retry?</strong><span class="signal-ai">importance 0.94 &middot; confidence 0.31</span></div><div class="signal-row"><code>ANSWER</code><span>Move to manual review; never re-authorize automatically.</span><span class="signal-ok">canonical context updated</span></div><div class="signal-row"><code>SYNC</code><span>4 native agent contexts regenerated locally</span><span class="signal-ok">fresh</span></div></div></div></section>
-
-        <section class="reach-strip"><div class="wrap"><div class="reach-grid"><div><div class="eyebrow accent"><span class="dot"></span>ContextHub</div><h2>One living context layer for every coding agent.</h2><p>Questions about access, product collaboration or the underlying system?</p></div><div class="reach-card"><div class="row"><span class="k">Product</span><span class="v">ContextHub</span></div><div class="row"><span class="k">Studio</span><span class="v">Infroid</span></div><div class="actions"><a href="https://contexthub.one" target="_blank" rel="noopener" class="btn btn-primary">Open ContextHub</a></div></div></div></div></section>
+        <section class="reach-strip"><div class="wrap"><div class="reach-grid"><div><div class="eyebrow accent"><span class="dot"></span>ContextHub</div><h2>One living context layer for every coding agent.</h2><p>Questions about access, product collaboration or the underlying system?</p></div><div class="reach-card"><div class="row"><span class="k">Product</span><span class="v">ContextHub</span></div><div class="row"><span class="k">Company</span><span class="v">Infroid</span></div><div class="actions"><a href="https://contexthub.one" target="_blank" rel="noopener" class="btn btn-primary">Open ContextHub</a></div></div></div></div></section>
     </main>
-
-    <footer class="site-footer"><div class="wrap"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="brand"><span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span></a><p>Complex context. Clear action. Built deliberately.</p></div><div class="footer-col"><div class="title">Products</div><a href="contexthub.html">ContextHub</a><a href="edp-assist.html">EDP Assist</a><a href="easemydisease.html">EaseMyDisease</a><a href="myfoodcraving.html">MyFoodCraving</a></div><div class="footer-col"><div class="title">Studio</div><a href="systems.html">Systems</a><a href="about.html">About</a></div><div class="footer-col"><div class="title">Reach us</div><a href="mailto:hello@infroid.in">hello@infroid.in</a></div></div><div class="footer-bottom"><span>&copy; <span id="copyrightYear">2026</span> Infroid</span><span class="live-meta"><span class="pulse"></span>Remote-first &middot; India</span></div></div></footer>
-
+    <footer class="site-footer"><div class="wrap"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="brand"><span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span></a><p>Everyday problems. Solved all the way through.</p></div><div class="footer-col"><div class="title">Products</div><a href="contexthub.html">ContextHub</a><a href="edp-assist.html">EDP Assist</a><a href="easemydisease.html">EaseMyDisease</a><a href="myfoodcraving.html">MyFoodCraving</a></div><div class="footer-col"><div class="title">Company</div><a href="systems.html">Systems</a><a href="about.html">About</a></div><div class="footer-col"><div class="title">Reach us</div><a href="mailto:hello@infroid.in">hello@infroid.in</a></div></div><div class="footer-bottom"><span>&copy; <span id="copyrightYear">2026</span> Infroid</span><span class="live-meta"><span class="pulse"></span>Remote-first &middot; India</span></div></div></footer>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
