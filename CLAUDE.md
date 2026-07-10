@@ -4,44 +4,70 @@ This file provides guidance to Claude Code and other coding agents working in th
 
 ## Project Overview
 
-This repository is the static marketing site for **Infroid**, an independent product studio. It is hosted on GitHub Pages at `infroid.in` and deploys from `master`.
+This repository is the static marketing site for **Infroid**, an independent product company. It is hosted on GitHub Pages at `infroid.in` and deploys from `master`.
 
-The primary brand line is:
+The primary company line is:
 
-> Complex context. Clear action.
+> Everyday problems. Solved all the way through.
 
-Infroid has four independent product theses:
+The core Infroid product doctrine is:
 
-1. **ContextHub** — AI context infrastructure. One living context layer for coding agents.
-2. **EDP Assist** — governed, read-only, plan-driven agentic analytics in Jupyter.
-3. **EaseMyDisease** — user-controlled personal health context and care coordination.
-4. **MyFoodCraving** — explainable personalized nutrition, guided cooking and local chefs.
+> Build products that solve everyday problems as comprehensively as possible. Use modern tools and technologies where they create meaningful leverage. Select new products for both their standalone value and the compounding effect they can have on the existing Infroid system.
 
-The portfolio story is that each product is complete on its own, while scoped context/evidence handoffs can create stronger systems. Do not describe any product as a prerequisite, module, add-on or backend for another.
+Current product surfaces include:
 
-The compounding portfolio narrative lives in `systems.html`. Its key rule is:
+- **ContextHub** — living project context for teams using AI coding agents.
+- **EDP Assist** — governed, read-only, plan-driven analytics in Jupyter.
+- **EaseMyDisease** — user-controlled personal health information and care continuity.
+- **MyFoodCraving** — explainable personalized nutrition, guided cooking and local chefs.
 
-> Products own domains. Handoffs move the minimum context required for a clear purpose.
+Do not frame the company around a fixed number of products. Do not describe the portfolio as `context → evidence → care → action` or imply that every product exists to illustrate ContextHub's philosophy.
 
-`systems.html` also presents two proposed Infroid product theses:
+Each product must receive comparable narrative seriousness and retain its own user, problem and complete value loop.
 
-- **Infroid Relay** — typed, purpose-scoped Context Capsules and Evidence Cards with provenance, consent and expiry.
-- **Infroid Observatory** — read-only longitudinal personal analytics using user-selected EMD and MFC context with EDP Assist-style governed analysis.
+## Portfolio Compounding
 
-These are presented as product theses, not as currently deployed product capabilities.
+The compounding narrative lives in `systems.html`.
+
+The key rule is:
+
+> Products stay themselves. Capabilities compound.
+
+ContextHub is an important shared capability for Infroid's software-development process and can support current project knowledge across the portfolio. It is **not** the parent product or the company metaphor.
+
+The other products also contribute reusable capabilities:
+
+- EDP Assist contributes governed, inspectable analytical patterns.
+- EaseMyDisease contributes longitudinal health continuity and user-controlled sharing patterns.
+- MyFoodCraving contributes explainable recommendation-to-execution and routine patterns.
+
+A product earns its place twice:
+
+1. it solves a practical everyday problem deeply on its own;
+2. building it leaves Infroid more capable of solving future problems.
+
+Do not force cross-product integrations. Combinations should preserve clear purpose, product independence and user control.
+
+## Company Direction
+
+Infroid is being structured around steward-ownership and perpetual-purpose principles.
+
+Do not state that Infroid is already legally constituted as a Perpetual Purpose Trust. The public site explicitly says the jurisdiction-specific binding legal structure is still being formalised.
+
+The stewardship story exists to protect Infroid's ability to follow its product doctrine over a long horizon. It should not overpower the product story.
 
 ## Site Architecture
 
 ```text
 /
-├── index.html              # Home / company thesis
-├── products.html           # Four-product overview
-├── systems.html            # Six product pairings + Relay / Observatory theses
+├── index.html              # Home / product doctrine
+├── products.html           # Product portfolio
+├── systems.html            # Compounding capabilities and product combinations
 ├── contexthub.html         # ContextHub product page
 ├── edp-assist.html         # EDP Assist product page
 ├── easemydisease.html      # EaseMyDisease product page
 ├── myfoodcraving.html      # MyFoodCraving product page
-├── about.html              # Studio story / principles / timeline
+├── about.html              # Purpose / product doctrine / stewardship
 ├── robots.txt
 ├── sitemap.xml
 ├── CNAME                   # infroid.in
@@ -63,7 +89,9 @@ These are presented as product theses, not as currently deployed product capabil
 
 ### Positioning
 
-Lead with the actual product mechanism. Avoid generic terms such as:
+Lead with the everyday problem and the complete product loop.
+
+Avoid generic terms such as:
 
 - modern IT solutions
 - AI-powered solutions
@@ -71,11 +99,17 @@ Lead with the actual product mechanism. Avoid generic terms such as:
 - affordable solutions
 - development/customization services
 
-Do not repeatedly frame Infroid as slow, tiny or anti-growth. The company is independent and focused; the tone should communicate technical seriousness rather than limitation.
+Also avoid company-level language that over-indexes on ContextHub concepts such as `complex context`, `canonical context`, `one truth`, `context layer`, or `context → evidence → action`, unless discussing ContextHub itself or a technically relevant system interaction.
 
-### Product status
+Modern technology is leverage, not Infroid's identity. The problem and outcome should remain primary.
 
-Do not reintroduce `Closed beta`, `Experimental`, or maturity badges as the primary product-card metadata. Use domain labels such as `AI context infrastructure`, `Agentic analytics`, `Personal health`, and `Personalized nutrition`.
+### Product balance
+
+- Do not lead with a product count such as `four products` or `four systems`.
+- Do not number product hero labels to imply a hierarchy.
+- Use equal card structure and comparable copy depth across products on company-level pages.
+- Do not describe any product as a prerequisite, module, add-on or backend for another.
+- ContextHub may be described as a shared software-development capability, but not as the parent of EDP Assist, EaseMyDisease or MyFoodCraving.
 
 ### Claims
 
@@ -90,14 +124,14 @@ For EaseMyDisease:
 For MyFoodCraving:
 
 - preserve the general-wellness / not-medical-advice boundary;
-- dietary identity, allergies and intolerances are described as hard eligibility constraints;
+- dietary identity, allergies and intolerances are hard eligibility constraints;
 - optional health markers may prioritize nutritional goals.
 
 For cross-product systems:
 
-- describe them as scoped, user-controlled handoffs;
+- describe sharing as selective, purposeful and user-controlled;
 - do not imply unrestricted shared databases or automatic vault access;
-- keep purpose, provenance, consent and expiry visible in the narrative.
+- do not force ContextHub vocabulary onto health or food products.
 
 ## Theme System
 
@@ -117,26 +151,7 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Deploy by updating `master`; GitHub Pages handles the public deployment.
-
-## Adding a Page
-
-Mirror the metadata and theme initialization of an existing product detail page. Every public page should include:
-
-- description;
-- canonical URL;
-- Open Graph metadata;
-- Twitter metadata;
-- theme-color metadata;
-- favicon;
-- `styles.css` and `portfolio.css` where portfolio components are used;
-- skip link;
-- primary nav;
-- `<main id="main">`;
-- site footer;
-- `assets/js/script.js`.
-
-Add the URL to `sitemap.xml`.
+Deploy by updating `master`; GitHub Pages handles public deployment.
 
 ## Testing Checklist
 
@@ -149,6 +164,6 @@ Before publishing:
 5. Parse `assets/css/portfolio.css` for CSS syntax errors.
 6. Test light and dark themes.
 7. Test mobile navigation.
-8. Check the four product pages and Systems page at mobile and desktop widths.
+8. Check the company pages and all product pages at mobile and desktop widths.
 9. Confirm external product links use `target="_blank" rel="noopener"`.
 10. Run a browser/Lighthouse pass when the environment provides a usable browser runtime.
