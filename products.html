@@ -1,276 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore ContextHub, EDP Assist, EaseMyDisease and MyFoodCraving: four independent Infroid products built for context, evidence, care and action.">
-    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+    <meta name="description" content="Explore Infroid products for software development, data analysis, personal health and food: each built to solve a practical problem comprehensively and strengthen the wider portfolio.">
+    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
     <title>Products — Infroid</title>
-
     <link rel="canonical" href="https://infroid.in/products.html">
-
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Infroid">
-    <meta property="og:title" content="Products — Infroid">
-    <meta property="og:description" content="Explore ContextHub, EDP Assist, EaseMyDisease and MyFoodCraving: four independent Infroid products built for context, evidence, care and action.">
-    <meta property="og:url" content="https://infroid.in/products.html">
-    <meta property="og:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Products — Infroid">
-    <meta name="twitter:description" content="Explore ContextHub, EDP Assist, EaseMyDisease and MyFoodCraving: four independent Infroid products built for context, evidence, care and action.">
-    <meta name="twitter:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
-
-    <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/portfolio.css">
-
-    <script>
-        (function () {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-theme', savedTheme);
-            } else {
-                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-                document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
-            }
-        })();
-    </script>
+    <meta property="og:type" content="website"><meta property="og:site_name" content="Infroid"><meta property="og:title" content="Products — Infroid"><meta property="og:description" content="Products built around practical problems and carried through the full user loop."><meta property="og:url" content="https://infroid.in/products.html"><meta property="og:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
+    <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Products — Infroid"><meta name="twitter:description" content="Comprehensive products for practical everyday problems."><meta name="twitter:image" content="https://infroid.in/assets/images/infroid-logo-transparent.png">
+    <link rel="icon" type="image/png" href="assets/images/infroid-logo-transparent.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/portfolio.css">
+    <script>(function(){const t=localStorage.getItem('theme');if(t){document.documentElement.setAttribute('data-theme',t);}else{document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');}})();</script>
 </head>
-
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="brand" aria-label="Infroid home">
-                <span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span>
-            </a>
-            <div class="nav-links" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="products.html" class="nav-link active">Products</a>
-                <a href="systems.html" class="nav-link">Systems</a>
-                <a href="about.html" class="nav-link">About</a>
-            </div>
-            <div class="nav-actions">
-                <a href="mailto:hello@infroid.in" class="btn btn-primary desktop-only">Talk to the studio</a>
-                <button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme">
-                    <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="4"></circle>
-                        <path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M2 12h2"></path><path d="M20 12h2"></path>
-                    </svg>
-                    <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation"
-                    aria-expanded="false">
-                    <span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <nav class="nav" id="nav"><div class="nav-inner"><a href="index.html" class="brand" aria-label="Infroid home"><span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span></a><div class="nav-links" id="navMenu"><a href="index.html" class="nav-link">Home</a><a href="products.html" class="nav-link active">Products</a><a href="systems.html" class="nav-link">Systems</a><a href="about.html" class="nav-link">About</a></div><div class="nav-actions"><a href="mailto:hello@infroid.in" class="btn btn-primary desktop-only">Talk to Infroid</a><button class="icon-button" id="themeSwitcher" type="button" aria-label="Toggle theme"><svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2"></path></svg><svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button><button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button></div></div></nav>
 
     <main id="main">
-        <section class="prod-hero">
-            <div class="wrap">
-                <div class="eyebrow accent"><span class="dot"></span>Products</div>
-                <h1>Four products.<br><span class="serif">Each complete on its own.</span></h1>
-                <p class="lede">
-                    Different users. Different domains. Different surfaces. The common standard is that context should
-                    be understood, reasoning should remain visible, and the product should carry the user to a useful next action.
-                </p>
-
-                <div class="portfolio-jump">
-                    <a class="pj" href="#contexthub"><div class="num">01 / CONTEXT</div><div class="name">ContextHub</div><div class="tag">AI context infrastructure</div></a>
-                    <a class="pj" href="#edp-assist"><div class="num">02 / EVIDENCE</div><div class="name">EDP Assist</div><div class="tag">Agentic analytics</div></a>
-                    <a class="pj" href="#easemydisease"><div class="num">03 / CARE</div><div class="name">EaseMyDisease</div><div class="tag">Personal health</div></a>
-                    <a class="pj" href="#myfoodcraving"><div class="num">04 / ACTION</div><div class="name">MyFoodCraving</div><div class="tag">Personalized nutrition</div></a>
-                </div>
+        <section class="prod-hero"><div class="wrap">
+            <div class="eyebrow accent"><span class="dot"></span>Products</div>
+            <h1>Built around problems.<br><span class="serif">Not product categories.</span></h1>
+            <p class="lede">Each Infroid product starts with a practical problem people repeatedly face. We use the strongest modern tools available, then keep building until the product covers the useful loop rather than one attractive fragment of it.</p>
+            <div class="portfolio-jump">
+                <a class="pj" href="#contexthub"><div class="num">SOFTWARE DEVELOPMENT</div><div class="name">ContextHub</div><div class="tag">Living project context for coding agents</div></a>
+                <a class="pj" href="#edp-assist"><div class="num">DATA ANALYSIS</div><div class="name">EDP Assist</div><div class="tag">Governed agentic analytics</div></a>
+                <a class="pj" href="#easemydisease"><div class="num">PERSONAL HEALTH</div><div class="name">EaseMyDisease</div><div class="tag">Health information and care continuity</div></a>
+                <a class="pj" href="#myfoodcraving"><div class="num">FOOD &amp; NUTRITION</div><div class="name">MyFoodCraving</div><div class="tag">Personalized food from plan to plate</div></a>
             </div>
-        </section>
+        </div></section>
 
         <section class="product-entry" id="contexthub">
-            <div class="wrap">
-                <div class="header">
-                    <div>
-                        <div class="eyebrow accent"><span class="dot"></span>01 / AI context infrastructure</div>
-                        <h2>ContextHub</h2>
-                        <p class="one-liner">One living context layer for every coding agent.</p>
-                        <div class="hero-cta"><span class="chip live">Context</span><span class="chip">Web + CLI</span><span class="chip">Agent-native</span></div>
-                    </div>
-                    <div class="body">
-                        <p>AI coding tools are becoming part of the engineering team. Their project context is not.</p>
-                        <p>ContextHub analyzes a repository locally, identifies uncertain or incomplete assumptions, turns the gaps into ranked questions, and maintains one canonical understanding of product, architecture, requirements and plans.</p>
-                        <p><strong>Answer once. Strengthen the context. Synchronize it across agents.</strong></p>
-                        <div class="actions"><a href="contexthub.html" class="btn btn-primary">Explore ContextHub</a><a href="https://contexthub.one" class="btn btn-ghost" target="_blank" rel="noopener">Open product &nearr;</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="spec-rail">
-                <div class="col"><div class="k">Core loop</div><div class="v">Analyze &rarr; Ask &rarr; Answer &rarr; Sync</div></div>
-                <div class="col"><div class="k">Value</div><div class="v">Freshness + gap filling</div></div>
-                <div class="col"><div class="k">Boundary</div><div class="v">Repo analysis stays local</div></div>
-            </div>
-            <div class="wrap">
-                <div class="signal-panel terminal-signal">
-                    <div class="signal-head"><span>context / checkout-service</span><span>4 agents &middot; 1 truth</span></div>
-                    <div class="signal-row"><code>$ ch init</code><span class="signal-ok">repo graph built locally</span></div>
-                    <div class="signal-row"><code>Q1</code><strong>What is the retry policy after payment authorization?</strong><span class="signal-ai">high impact &middot; low confidence</span></div>
-                    <div class="signal-row"><code>ANSWER</code><span>Exponential backoff, 3 attempts, then manual review.</span><span class="signal-ok">context strengthened</span></div>
-                    <div class="signal-row"><code>$ ch sync</code><span>CLAUDE.md &middot; AGENTS.md &middot; native agent files</span><span class="signal-ok">current</span></div>
-                </div>
-            </div>
+            <div class="wrap"><div class="header"><div><div class="eyebrow accent"><span class="dot"></span>Software development</div><h2>ContextHub</h2><p class="one-liner">One living context layer for every coding agent.</p><div class="hero-cta"><span class="chip">Web + CLI</span><span class="chip">Agent-native</span><span class="chip live">Local analysis</span></div></div><div class="body"><p>AI coding agents can write code quickly, but every tool begins with an incomplete understanding of the product, architecture and decisions behind the repository.</p><p>ContextHub analyzes a repository locally, identifies important gaps, turns uncertainty into ranked questions, and maintains canonical project context that can be rendered for multiple coding agents.</p><p><strong>The everyday problem is repeated explanation and context drift. ContextHub lets a team answer once and keep the understanding current.</strong></p><div class="actions"><a href="contexthub.html" class="btn btn-primary">Explore ContextHub</a><a href="https://contexthub.one" class="btn btn-ghost" target="_blank" rel="noopener">Open product &nearr;</a></div></div></div></div>
+            <div class="spec-rail"><div class="col"><div class="k">Problem</div><div class="v">Agents repeatedly miss project context</div></div><div class="col"><div class="k">Complete loop</div><div class="v">Analyze &rarr; Ask &rarr; Answer &rarr; Sync</div></div><div class="col"><div class="k">Portfolio contribution</div><div class="v">Reusable context and gap-finding patterns</div></div></div>
+            <div class="wrap"><div class="signal-panel terminal-signal"><div class="signal-head"><span>context / checkout-service</span><span>4 agents &middot; 1 current project model</span></div><div class="signal-row"><code>$ ch init</code><span class="signal-ok">repo graph built locally</span></div><div class="signal-row"><code>Q1</code><strong>What is the retry policy after payment authorization?</strong><span class="signal-ai">high impact &middot; low confidence</span></div><div class="signal-row"><code>ANSWER</code><span>Exponential backoff, 3 attempts, then manual review.</span><span class="signal-ok">context strengthened</span></div><div class="signal-row"><code>$ ch sync</code><span>CLAUDE.md &middot; AGENTS.md &middot; native agent files</span><span class="signal-ok">current</span></div></div></div>
         </section>
 
         <section class="product-entry" id="edp-assist">
-            <div class="wrap">
-                <div class="header">
-                    <div>
-                        <div class="eyebrow accent"><span class="dot"></span>02 / Agentic analytics</div>
-                        <h2>EDP Assist</h2>
-                        <p class="one-liner">A governed AI analyst that builds the answer live.</p>
-                        <div class="hero-cta"><span class="chip">30 agents</span><span class="chip">38 skills</span><span class="chip live">Read-only</span></div>
-                    </div>
-                    <div class="body">
-                        <p>Ask a data question in plain English. EDP Assist rates the complexity, composes a bounded plan, and shows the plan before complex work begins.</p>
-                        <p>Then the analysis builds live inside Jupyter. Every section explains what is being measured, why it matters, how it is being calculated, and what the finding means.</p>
-                        <p><strong>The final answer cites the executed analysis that supports it.</strong></p>
-                        <div class="actions"><a href="edp-assist.html" class="btn btn-primary">Explore EDP Assist</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="spec-rail">
-                <div class="col"><div class="k">Core loop</div><div class="v">Ask &rarr; Plan &rarr; Approve &rarr; Watch &rarr; Answer</div></div>
-                <div class="col"><div class="k">Guarantee</div><div class="v">One guarded data door</div></div>
-                <div class="col"><div class="k">Output</div><div class="v">Narrated notebook + cited answer</div></div>
-            </div>
-            <div class="wrap">
-                <div class="signal-panel notebook-signal">
-                    <div class="signal-head"><span>churn-by-region.ipynb</span><span>complexity 3 / approved</span></div>
-                    <div class="plan-line"><span>01</span><strong>Profile cohort</strong><small>eda-agent</small></div>
-                    <div class="plan-line"><span>02</span><strong>Measure regional churn</strong><small>groupby-agent</small></div>
-                    <div class="plan-line"><span>03</span><strong>Test concentration</strong><small>stats-agent</small></div>
-                    <div class="answer-card"><span>ANSWER</span><strong>West churn concentrates at 67% versus 33% in East.</strong><small>Cited to executed cells 6, 9 and 12 &middot; data unchanged</small></div>
-                </div>
-            </div>
+            <div class="wrap"><div class="header"><div><div class="eyebrow accent"><span class="dot"></span>Data analysis</div><h2>EDP Assist</h2><p class="one-liner">A governed AI analyst that builds the answer live.</p><div class="hero-cta"><span class="chip">30 agents</span><span class="chip">38 skills</span><span class="chip live">Read-only</span></div></div><div class="body"><p>Business and data questions often begin in plain language but end in an opaque answer, a long analyst queue, or a notebook only one person understands.</p><p>EDP Assist turns the question into a bounded plan, shows the plan before complex work begins, and builds the analysis visibly inside Jupyter. The work is narrated as it runs and the final answer cites the executed cells that support it.</p><p><strong>The everyday problem is getting from a question to analysis you can inspect. EDP Assist keeps the reasoning, method and evidence attached to the answer.</strong></p><div class="actions"><a href="edp-assist.html" class="btn btn-primary">Explore EDP Assist</a></div></div></div></div>
+            <div class="spec-rail"><div class="col"><div class="k">Problem</div><div class="v">Data answers without visible work</div></div><div class="col"><div class="k">Complete loop</div><div class="v">Ask &rarr; Plan &rarr; Approve &rarr; Analyze &rarr; Cite</div></div><div class="col"><div class="k">Portfolio contribution</div><div class="v">Governed, reviewable analytical capability</div></div></div>
+            <div class="wrap"><div class="signal-panel notebook-signal"><div class="signal-head"><span>churn-by-region.ipynb</span><span>complexity 3 / approved</span></div><div class="plan-line"><span>01</span><strong>Profile cohort</strong><small>eda-agent</small></div><div class="plan-line"><span>02</span><strong>Measure regional churn</strong><small>groupby-agent</small></div><div class="plan-line"><span>03</span><strong>Test concentration</strong><small>stats-agent</small></div><div class="answer-card"><span>ANSWER</span><strong>West churn concentrates at 67% versus 33% in East.</strong><small>Cited to executed cells 6, 9 and 12 &middot; data unchanged</small></div></div></div>
         </section>
 
         <section class="product-entry" id="easemydisease">
-            <div class="wrap">
-                <div class="header">
-                    <div>
-                        <div class="eyebrow accent"><span class="dot"></span>03 / Personal health</div>
-                        <h2>EaseMyDisease</h2>
-                        <p class="one-liner">Your health context, ready before you need it.</p>
-                        <div class="hero-cta"><span class="chip">Health vault</span><span class="chip">Care access</span><span class="chip">Emergency</span></div>
-                    </div>
-                    <div class="body">
-                        <p>Health information is usually scattered across reports, prescriptions, providers, messages and memory.</p>
-                        <p>EaseMyDisease brings records, medications, family health, insurance information, doctor access and urgent health context into one controlled personal experience.</p>
-                        <p><strong>A person's health history is continuous. Their health software should be too.</strong></p>
-                        <div class="actions"><a href="easemydisease.html" class="btn btn-primary">Explore EaseMyDisease</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="spec-rail">
-                <div class="col"><div class="k">Core loop</div><div class="v">Capture &rarr; Organize &rarr; Share &rarr; Coordinate</div></div>
-                <div class="col"><div class="k">Surfaces</div><div class="v">Vault / Body map / Medication / SOS</div></div>
-                <div class="col"><div class="k">Principle</div><div class="v">User-controlled health context</div></div>
-            </div>
-            <div class="wrap">
-                <div class="signal-panel health-signal">
-                    <div class="signal-head"><span>care context</span><span>controlled by you</span></div>
-                    <div class="health-track">
-                        <div><span>VAULT</span><strong>247 records</strong><small>labs &middot; imaging &middot; prescriptions</small></div>
-                        <div><span>MEDS</span><strong>3 active</strong><small>adherence &middot; refill context</small></div>
-                        <div><span>BODY MAP</span><strong>Heart</strong><small>linked records and health context</small></div>
-                        <div class="urgent"><span>SOS</span><strong>Emergency context ready</strong><small>selected information for the moment that matters</small></div>
-                    </div>
-                </div>
-            </div>
+            <div class="wrap"><div class="header"><div><div class="eyebrow accent"><span class="dot"></span>Personal health</div><h2>EaseMyDisease</h2><p class="one-liner">Your health information, ready before you need it.</p><div class="hero-cta"><span class="chip">Health vault</span><span class="chip">Care access</span><span class="chip">Emergency</span></div></div><div class="body"><p>Personal health information is usually spread across reports, prescriptions, providers, family messages and memory. The fragmentation becomes most painful precisely when information needs to move quickly.</p><p>EaseMyDisease brings records, medication context, family profiles, body-linked health information, care access and emergency context into one user-controlled experience.</p><p><strong>The everyday problem is continuity. A person's health history is continuous; the product is designed to make their information continuous too.</strong></p><div class="actions"><a href="easemydisease.html" class="btn btn-primary">Explore EaseMyDisease</a></div></div></div></div>
+            <div class="spec-rail"><div class="col"><div class="k">Problem</div><div class="v">Health information is fragmented</div></div><div class="col"><div class="k">Complete loop</div><div class="v">Capture &rarr; Organize &rarr; Access &rarr; Share</div></div><div class="col"><div class="k">Portfolio contribution</div><div class="v">User-controlled longitudinal health context</div></div></div>
+            <div class="wrap"><div class="signal-panel health-signal"><div class="signal-head"><span>personal health</span><span>controlled by you</span></div><div class="signal-row"><code>VAULT</code><strong>Reports, labs and prescriptions</strong><span>organized for retrieval</span></div><div class="signal-row"><code>MEDS</code><strong>Active medication context</strong><span>adherence and refill history</span></div><div class="signal-row"><code>BODY</code><strong>Health information linked to the body</strong><span>records with practical context</span></div><div class="signal-row"><code>SOS</code><strong>Selected urgent information ready</strong><span>for the moment that matters</span></div></div></div>
         </section>
 
         <section class="product-entry" id="myfoodcraving">
-            <div class="wrap">
-                <div class="header">
-                    <div>
-                        <div class="eyebrow accent"><span class="dot"></span>04 / Personalized nutrition</div>
-                        <h2>MyFoodCraving</h2>
-                        <p class="one-liner">Personalized nutrition that ends in a cooked meal.</p>
-                        <div class="hero-cta"><span class="chip">Recommendations</span><span class="chip">Guided cooking</span><span class="chip">Local chefs</span></div>
-                    </div>
-                    <div class="body">
-                        <p>Most nutrition products stop at advice. MyFoodCraving continues until there is food on the table.</p>
-                        <p>The recommendation engine balances hard dietary eligibility, energy, nutrition priorities, optional measured health markers, preferences, variety and everyday effort. Every recommendation explains why it fits.</p>
-                        <p><strong>Choose a meal, cook it step by step, or move from the recipe to a local chef.</strong></p>
-                        <div class="actions"><a href="myfoodcraving.html" class="btn btn-primary">Explore MyFoodCraving</a><a href="https://myfoodcraving.com" class="btn btn-ghost" target="_blank" rel="noopener">Open product &nearr;</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="spec-rail">
-                <div class="col"><div class="k">Core loop</div><div class="v">Understand &rarr; Recommend &rarr; Explain &rarr; Cook</div></div>
-                <div class="col"><div class="k">Hard boundaries</div><div class="v">Diet identity / allergies / intolerances</div></div>
-                <div class="col"><div class="k">Execution</div><div class="v">Guided recipe or chef booking</div></div>
-            </div>
-            <div class="wrap">
-                <div class="signal-panel food-signal">
-                    <div class="signal-head"><span>today / dinner</span><span>reasoned recommendation</span></div>
-                    <div class="meal-pick"><span>RECOMMENDED</span><strong>Paneer quinoa khichdi</strong><p>Fits your vegetarian profile. Helps close protein and iron gaps. Lower added sugar. 32 g protein per serving.</p></div>
-                    <div class="food-actions"><span>GUIDED COOKING &rarr; 4 steps</span><span>COOK MY PLAN &rarr; shopping + local chef</span></div>
-                </div>
-            </div>
+            <div class="wrap"><div class="header"><div><div class="eyebrow accent"><span class="dot"></span>Food &amp; nutrition</div><h2>MyFoodCraving</h2><p class="one-liner">Personalized nutrition that ends in a cooked meal.</p><div class="hero-cta"><span class="chip">Recommendations</span><span class="chip">Guided cooking</span><span class="chip">Local chefs</span></div></div><div class="body"><p>Nutrition products often stop after telling people what they should eat. Recipe products assume the user already knows what fits. Chef marketplaces start only after the food decision has been made.</p><p>MyFoodCraving connects personalized meal recommendations, plain-language reasons, dietary constraints, recipe guidance, meal tracking and local chef discovery in one practical food loop.</p><p><strong>The everyday problem is not finding information about food. It is getting from personal needs to a meal that actually gets made.</strong></p><div class="actions"><a href="myfoodcraving.html" class="btn btn-primary">Explore MyFoodCraving</a><a href="https://myfoodcraving.com" class="btn btn-ghost" target="_blank" rel="noopener">Open product &nearr;</a></div></div></div></div>
+            <div class="spec-rail"><div class="col"><div class="k">Problem</div><div class="v">Nutrition advice stops before execution</div></div><div class="col"><div class="k">Complete loop</div><div class="v">Personalize &rarr; Explain &rarr; Cook &rarr; Track</div></div><div class="col"><div class="k">Portfolio contribution</div><div class="v">Recommendation-to-action and routine data</div></div></div>
+            <div class="wrap"><div class="signal-panel"><div class="signal-head"><span>today's food plan</span><span>personalized &middot; explainable</span></div><div class="signal-row"><code>BREAKFAST</code><strong>Moong chilla + curd</strong><span class="signal-ok">high protein &middot; fits vegetarian profile</span></div><div class="signal-row"><code>WHY</code><strong>Supports today's protein goal with familiar ingredients</strong><span>reason visible</span></div><div class="signal-row"><code>COOK</code><strong>Start guided recipe</strong><span>step-by-step mode</span></div><div class="signal-row"><code>CHEF</code><strong>Find recipe-relevant local cooks</strong><span>move from plan to meal</span></div></div></div>
         </section>
 
-        <section class="reach-strip">
-            <div class="wrap">
-                <div class="reach-grid">
-                    <div><div class="eyebrow accent"><span class="dot"></span>Beyond the product pages</div><h2>See what the portfolio unlocks when products compose.</h2><p>Six pairwise systems. One missing exchange layer. A path from four products to a compounding portfolio.</p></div>
-                    <div class="reach-card"><div class="row"><span class="k">Systems</span><span class="v">Context &middot; evidence &middot; health &middot; food</span></div><div class="actions"><a href="systems.html" class="btn btn-primary">Explore the systems</a></div></div>
-                </div>
-            </div>
-        </section>
+        <section class="manifesto"><div class="wrap"><div class="eyebrow accent"><span class="tick"></span>Why these products belong together</div><p class="manifesto-quote"><span class="mark">“</span>Not because they share a category. Because every product adds a capability Infroid can use to solve the next everyday problem more completely. <span class="accent">Standalone value first. Compounding effect by design.</span><span class="mark">”</span></p></div></section>
+
+        <section class="reach-strip"><div class="wrap"><div class="reach-grid"><div><div class="eyebrow accent"><span class="dot"></span>Portfolio systems</div><h2>See what the products can unlock together.</h2><p>The Systems page explains the practical combinations, the shared capabilities, and the product-selection logic behind the Infroid portfolio.</p></div><div class="reach-card"><div class="row"><span class="k">Next</span><span class="v">Explore compounding systems</span></div><div class="row"><span class="k">Principle</span><span class="v">Solve deeply &middot; compound deliberately</span></div><div class="actions"><a href="systems.html" class="btn btn-primary">Explore Systems</a></div></div></div></div></section>
     </main>
 
-    <footer class="site-footer">
-        <div class="wrap">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="index.html" class="brand"><span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span></a>
-                    <p>Complex context. Clear action. Built deliberately.</p>
-                </div>
-                <div class="footer-col">
-                    <div class="title">Products</div>
-                    <a href="contexthub.html">ContextHub</a>
-                    <a href="edp-assist.html">EDP Assist</a>
-                    <a href="easemydisease.html">EaseMyDisease</a>
-                    <a href="myfoodcraving.html">MyFoodCraving</a>
-                </div>
-                <div class="footer-col">
-                    <div class="title">Studio</div>
-                    <a href="systems.html">Systems</a>
-                    <a href="about.html">About</a>
-                </div>
-                <div class="footer-col">
-                    <div class="title">Reach us</div>
-                    <a href="mailto:hello@infroid.in">hello@infroid.in</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; <span id="copyrightYear">2026</span> Infroid</span>
-                <span class="live-meta"><span class="pulse"></span>Remote-first &middot; India</span>
-            </div>
-        </div>
-    </footer>
-
+    <footer class="site-footer"><div class="wrap"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="brand"><span class="b">[</span>in<span class="b">]</span>froid<span class="dot"></span></a><p>Everyday problems. Solved all the way through.</p></div><div class="footer-col"><div class="title">Products</div><a href="contexthub.html">ContextHub</a><a href="edp-assist.html">EDP Assist</a><a href="easemydisease.html">EaseMyDisease</a><a href="myfoodcraving.html">MyFoodCraving</a></div><div class="footer-col"><div class="title">Company</div><a href="systems.html">Systems</a><a href="about.html">About</a></div><div class="footer-col"><div class="title">Reach us</div><a href="mailto:hello@infroid.in">hello@infroid.in</a></div></div><div class="footer-bottom"><span>&copy; <span id="copyrightYear">2026</span> Infroid</span><span class="live-meta"><span class="pulse"></span>Remote-first &middot; India</span></div></div></footer>
     <script src="assets/js/script.js"></script>
 </body>
-
 </html>
